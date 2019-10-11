@@ -103,6 +103,9 @@ docker image ls
 docker ps -a
 docker container ls --all
 docker container ls -a
+
+docker ps -a
+docker exec -it mynginx /bin/bash 
 ```
 
 ##### 启动mysql容器
