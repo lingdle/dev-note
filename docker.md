@@ -16,7 +16,7 @@ https://docs.docker.com/install/linux/docker-ce/centos/
 
 ``` 
 sudo yum remove docker \
-    docker-client \
+	docker-client \
 	docker-client-latest \
 	docker-common \
 	docker-latest \
