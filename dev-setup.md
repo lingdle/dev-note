@@ -1,5 +1,5 @@
 # 开发环境搭建
-## Widowns 10+
+## Widowns 10+ WSL
 
 ### 概述
 1. 安装常用开发工具： WebStorm/IDEA/Sublime
