@@ -15,7 +15,6 @@
 > 2. Timenow [参考这里](https://packagecontrol.io/packages/Timenow) `https://packagecontrol.io/packages/Timenow`
 
 #### 定制一个好用的Linux终端：WSL:Ubuntu
-
 1. 安装 WSL [参考这里](https://docs.microsoft.com/zh-cn/windows/wsl/) `https://docs.microsoft.com/zh-cn/windows/wsl/`
 2. 安装 WSL:Ubuntu
 3. 定制自己 WSL:Ubuntu 环境 : 进入 WSL:Ubuntu terminal
