@@ -16,8 +16,10 @@
 
 #### 定制一个好用的Linux终端：WSL:Ubuntu
 1. 安装 WSL [参考这里](https://docs.microsoft.com/zh-cn/windows/wsl/) `https://docs.microsoft.com/zh-cn/windows/wsl/`
-2. 安装 WSL:Ubuntu
-3. 定制自己 WSL:Ubuntu 环境 : 进入 WSL:Ubuntu terminal
+2. 安装 WSL:Ubuntu : 两种方式
+  - 【快速开始】进入 microsoft store 搜索 WSL:Ubuntu 安装应用
+  - 【定制支持】安装基于docker的自定义linux系统 [参考这里](https://docs.microsoft.com/zh-cn/windows/wsl/use-custom-distro) `https://docs.microsoft.com/zh-cn/windows/wsl/use-custom-distro`
+4. 定制自己 WSL:Ubuntu 环境 : 进入 WSL:Ubuntu terminal
   1. 更换阿里镜像源 [参考这里](https://developer.aliyun.com/mirror/ubuntu?spm=a2c6h.13651102.0.0.3e221b11OY2pW1) `https://developer.aliyun.com/mirror/ubuntu?spm=a2c6h.13651102.0.0.3e221b11OY2pW1`
   ```bash
   // 先核对版本
@@ -52,12 +54,16 @@
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   ```
   > 好用的 oh my zsh 插件
+  > - 命令联想提示
   ```
-  // 命令联想提示
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  // vim ~/.zshrc 追加插件
   plugins=( [plugins...] zsh-autosuggestions)
-  // 命令错误检查
+  ```
+  > - 命令错误检查
+  ```
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  // vim ~/.zshrc 追加插件
   plugins=( [plugins...] zsh-syntax-highlighting)
   ```
   3. 定制 node 环境： [参考这里](https://github.com/nvm-sh/nvm) `https://github.com/nvm-sh/nvm`
