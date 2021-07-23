@@ -7,9 +7,9 @@
 3. 在编辑器中配置默认终端为： WSL:Ubuntu terminal
 
 #### 安装好用的开发工具
-1. jetbrains 全家桶 [参考这里](https://www.jetbrains.com/zh-cn/toolbox-app/) `https://www.jetbrains.com/zh-cn/toolbox-app/`
+- jetbrains 全家桶 [参考这里](https://www.jetbrains.com/zh-cn/toolbox-app/) `https://www.jetbrains.com/zh-cn/toolbox-app/`
 > 如何破解 [参考这里](https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html) `https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html`
-2. Sublime [参考这里](https://www.sublimetext.com/download) `https://www.sublimetext.com/download`
+- Sublime [参考这里](https://www.sublimetext.com/download) `https://www.sublimetext.com/download`
 > 好用的Sublime插件： 
 > 1. Terminus [参考这里](https://packagecontrol.io/packages/Terminus) `https://packagecontrol.io/packages/Terminus`
 > 2. Timenow [参考这里](https://packagecontrol.io/packages/Timenow) `https://packagecontrol.io/packages/Timenow`
@@ -84,7 +84,6 @@
   // 切换国内npm镜像源
   nrm use taobao
   ```
-  
   > 可能需要配置 ~/.zshrc
   ```bash
   echo '# NVM configuration
