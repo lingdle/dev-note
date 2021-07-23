@@ -46,6 +46,15 @@
   // 安装 oh-my-zsh
   sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   ```
+  > 好用的 oh my zsh 插件
+  ```
+  // 命令联想提示
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  plugins=( [plugins...] zsh-autosuggestions)
+  // 命令错误检查
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  plugins=( [plugins...] zsh-syntax-highlighting)
+  ```
   3. 定制 node 环境： [参考这里](https://github.com/nvm-sh/nvm) `https://github.com/nvm-sh/nvm`
   ```
   // 安装nvm
@@ -78,13 +87,3 @@
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion' >> ~/.zshrc
   ```
-  > 好用的 oh my zsh 插件
-  ```
-  // 命令联想提示
-  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-  plugins=( [plugins...] zsh-autosuggestions)
-  // 命令错误检查
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-  plugins=( [plugins...] zsh-syntax-highlighting)
-  ```
-
