@@ -107,11 +107,8 @@ nrm -V
 nrm ls
 // 切换国内npm镜像源
 nrm use taobao
-```
-> 可能需要配置 ~/.zshrc
-```bash
-echo '# NVM configuration
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion' >> ~/.zshrc
+
+// 这样使用自己的私有的nexus源
+nrm add nexus http://127.0.0.1:8888/nexus/repo
+nrm use nexus
 ```
