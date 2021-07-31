@@ -6,6 +6,11 @@
 2. 定制一个好用的Linux终端： WSL:Ubuntu terminal
 3. 在编辑器中配置默认终端为： WSL:Ubuntu terminal
 
+> **在以上配置完成后基于wsl的开发环境就搭建完成了，但是还是存在一些使用上的问题如下:**
+> - 需要添加 windows 上的网络位置 `\\wsl$\Ubuntu\home\yourname\wlsworkspace` 到 windows资源管理以，方便访问linux系统内部文件
+> - windows 中的 jetbrains 工具不能打开 linux 中的 symlink 符号链接， 但是 wsl Ubuntu terminal 终端命令可以识别, 这会导致 npm link 在idea中显示错误但是命令行启动是可用的
+> - 在linux terminal中的文件变化，windows 中的 jetbrains 工具会找不到，原因是网络路径上的文件变化没有同步，实际文件已经存在了，只是没有刷新过来，需要等待右下角的Synchronizing file同步完成，这个过程会很漫长...
+
 #### 安装好用的开发工具
 - jetbrains 全家桶 [参考这里](https://www.jetbrains.com/zh-cn/toolbox-app/) `https://www.jetbrains.com/zh-cn/toolbox-app/`
 
