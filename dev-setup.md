@@ -54,7 +54,10 @@ git config --global http.proxy
 git config --global https.proxy
 git config --global --unset http.proxy
 git config --global --unset https.proxy
+// 可能是需要一把梯子然后设置好代理
+set http_proxy=http://127.0.0.1:7890 & set https_proxy=http://127.0.0.1:7890
 ```
+
 4. 定制 zsh + oh-my-zsh terminal [参考这里](https://github.com/ohmyzsh/ohmyzsh/wiki) `https://github.com/ohmyzsh/ohmyzsh/wiki`
 ```
 // 安装 zsh
