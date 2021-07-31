@@ -49,13 +49,12 @@ sudo lsb_release -a
 > 后续安装过程依赖 git 先确认 git 版本 : Ubuntu默认是安装过的
 ```bash
 git --version
-// 有时候 github 拉取代码网络超时， 需要尝试以下命令
-git config --global http.proxy
-git config --global https.proxy
-git config --global --unset http.proxy
-git config --global --unset https.proxy
-// 可能是需要一把梯子然后设置好代理
-set http_proxy=http://127.0.0.1:7890 & set https_proxy=http://127.0.0.1:7890
+// 自己判断是否要升级git,执行以下命令
+sudo apt install git
+// 有时候 github 拉取代码网络超时，后续下载安装过程中，可能是需要一把梯子然后设置好代理, 主机允许 lan 连接
+export http_proxy=http://192.168.3.9:7890 & export https_proxy=http://192.168.3.9:7890
+// 测试以下
+curl -I https://raw.github.com
 ```
 
 4. 定制 zsh + oh-my-zsh terminal [参考这里](https://github.com/ohmyzsh/ohmyzsh/wiki) `https://github.com/ohmyzsh/ohmyzsh/wiki`
@@ -63,25 +62,32 @@ set http_proxy=http://127.0.0.1:7890 & set https_proxy=http://127.0.0.1:7890
 // 安装 zsh
 sudo apt install zsh
 // 安装 oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
+// sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
-> 好用的 oh my zsh 插件
-> - 命令联想提示
+> 好用的 oh my zsh 插件 一起打包了
 ```
+// 命令联想提示
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-// vim ~/.zshrc 追加插件
-plugins=( [plugins...] zsh-autosuggestions)
-```
-> - 命令错误检查
-```
+// 命令错误检查
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-// vim ~/.zshrc 追加插件
-plugins=( [plugins...] zsh-syntax-highlighting)
+
+// 启用插件
+vim ~/.zshrc
+plugins=( git zsh-autosuggestions zsh-syntax-highlighting)
+source ~/.zshrc
 ```
 5. 定制 node 环境： [参考这里](https://github.com/nvm-sh/nvm) `https://github.com/nvm-sh/nvm`
 ```
 // 安装nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+// 如果用 zsh 则需要配置 ~/.zshrc
+echo '# NVM configuration
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion' >> ~/.zshrc
+
+source ~/.zshrc
 // 核对版本
 nvm -v
 // 查看已安装 node
