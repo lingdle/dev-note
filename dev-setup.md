@@ -77,6 +77,7 @@ vim ~/.zshrc
 plugins=( git zsh-autosuggestions zsh-syntax-highlighting)
 source ~/.zshrc
 ```
+
 5. 定制 node 环境： [参考这里](https://github.com/nvm-sh/nvm) `https://github.com/nvm-sh/nvm`
 ```
 // 安装nvm
@@ -111,4 +112,20 @@ nrm use taobao
 // 这样使用自己的私有的nexus源
 nrm add nexus http://127.0.0.1:8888/nexus/repo
 nrm use nexus
+```
+
+6. 配置git环境
+
+```
+git config --global user.name "username"
+git config --global user.email "name@domain.com"
+
+// 将密码存做磁盘上，默认是home目录明文存贮，不安全但一劳永逸
+git config --global credential.helper 'store --file <path>'
+
+// 将密码缓存在内存中 默认900s ，15min后需要重新输入密码
+git config --global credential.helper 'cache --timeout <seconds>'
+
+// 设置 git cli 默认编辑器为 vim
+git config --global core.editor vim
 ```
