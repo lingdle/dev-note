@@ -11,8 +11,12 @@
 
     > 如何破解 [参考这里](https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html) `https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html`
     > 好用的插件
-    > - AutoLink 控制台链接支持点击打开文件 
-    > 注意：在WSL定制完成后检查以下配置（目的是仅仅在windows 环境写代码， 其他的操作都在linux环境完成）
+    > - AutoLink 控制台链接支持点击打开文件  
+
+    > 简单的调优配置
+    > - VM Options: `-Xms2G` `-Xmx2G` `-XX:ReservedCodeCacheSize=1G`
+
+    > **注意：在WSL定制完成后检查以下配置（目的是仅仅在windows 环境写代码， 其他的操作都在linux环境完成）**
     > - jetbrains 工具的 terminal 应该配置为 `wsl.exe --distribution Ubuntu` ， 如果没有自动识别需要自己配置
     > - jetbrains 工具的 node.js and NPM 环境应配置为 wsl 中的 node npm 和 yarn， 如果没有自动识别需要自己 Add WSL... 显示像这样: `Ubuntu /your-node-home-path/bin/node` `yarn /usr/share/yarn`
     > - jetbrains 工具的 git 环境应该设置为 wsl 中的 git, 如果没有自动识别需呀自己配置，显示像这样: `Auto-detected: \\wsl$\Ubuntu\usr\bin\git`
