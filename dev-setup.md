@@ -76,6 +76,11 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 vim ~/.zshrc
 plugins=( git zsh-autosuggestions zsh-syntax-highlighting)
 source ~/.zshrc
+
+// 设置 alias
+alias subl="/mnt/d/develop/SublimeText/subl.exe"
+alias idea="/mnt/your/JetBrains/IDEA/HomePath/bin/idea64.exe"
+alias webs="/mnt/your/JetBrains/WebStorm/HomePath/bin/webstorm64.exe"
 ```
 
 5. 定制 node 环境： [参考这里](https://github.com/nvm-sh/nvm) `https://github.com/nvm-sh/nvm`
