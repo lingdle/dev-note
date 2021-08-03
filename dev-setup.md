@@ -67,17 +67,17 @@ git --version
 // 自己判断是否要升级git,执行以下命令
 sudo apt install git
 // 有时候 github 拉取代码网络超时，后续下载安装过程中，可能是需要一把梯子然后设置好代理, 主机允许 lan 连接
-export http_proxy=http://your-proxy-ip:7890
-export https_proxy=http://your-proxy-ip:7890
+export http_proxy=http://your-proxy-ip:port
+export https_proxy=http://your-proxy-ip:port
 // 测试以下
 curl -I https://raw.github.com
 ```
 
 4. 定制 zsh + oh-my-zsh terminal [参考这里](https://github.com/ohmyzsh/ohmyzsh/wiki) `https://github.com/ohmyzsh/ohmyzsh/wiki`
 ```
-// 安装 zsh
+// 安装 zsh 
 sudo apt install zsh
-// 安装 oh-my-zsh
+// 安装 oh-my-zsh : 如果安装后没有自动设置zsh为默认 terminal，则需要手动设置: chsh -s /bin/zsh
 curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
 // sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
@@ -90,15 +90,16 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 // 启用插件
 vim ~/.zshrc
-plugins=( git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=( git zsh-autosuggestions zsh-syntax-highlighting )
 
 // 设置 alias
-alias subl="/mnt/d/develop/SublimeText/subl.exe"
-alias idea="/mnt/your/JetBrains/IDEA/HomePath/bin/idea64.exe"
-alias webs="/mnt/your/JetBrains/WebStorm/HomePath/bin/webstorm64.exe"
-alias proxy="export http_proxy=http://your-proxy-ip:7890 && export https_proxy=http://your-proxy-ip:7890"
+JetBrainsToolHome="/mnt/c/Users/username/AppData/Local/JetBrains/Toolbox/apps"
+alias idea="$JetBrainsToolHome/IDEA-U/ch-0/212.4746.92/bin/idea64.exe"
+alias webs="$JetBrainsToolHome/WebStorm/ch-0/212.4746.80/bin/webstorm64.exe"
+alias subl="/mnt/your-sublime-homepath/subl.exe"
+alias proxy="export http_proxy=http://your-proxy-ip:port && export https_proxy=http://your-proxy-ip:port"
 alias unproxy="unset http_proxy && unset https_proxy"
-alias cproxy="echo http_proxy=$http_proxy && echo https_proxy=$https_proxy"
+alias cproxy='echo "http_proxy=$http_proxy" && echo "https_proxy=$https_proxy"'
 
 source ~/.zshrc
 ```
@@ -135,7 +136,7 @@ nrm ls
 nrm use taobao
 
 // 这样使用自己的私有的nexus源
-nrm add nexus http://127.0.0.1:8888/nexus/repo
+nrm add nexus http://nexus-host:port/nexus-repo
 nrm use nexus
 ```
 
