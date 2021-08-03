@@ -69,7 +69,7 @@ sudo apt install git
 // 有时候 github 拉取代码网络超时，后续下载安装过程中，可能是需要一把梯子然后设置好代理, 主机允许 lan 连接
 export http_proxy=http://your-proxy-ip:port
 export https_proxy=http://your-proxy-ip:port
-// 测试以下
+// 测试一下
 curl -I https://raw.github.com
 ```
 
@@ -165,5 +165,32 @@ git config --global core.autocrlf input
 git config --global core.safecrlf true
 
 ```
+
+7. 配置 java 环境
+
+> 安装 Java 版本管理器 jabba [参考这里](https://github.com/shyiko/jabba) `https://github.com/shyiko/jabba`
+
+```
+curl -fsSL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
+
+wget https://download.oracle.com/otn/java/jdk/8u301-b09/d3c52aa6bfa54d3ca74e617f18309292/jdk-8u301-linux-x64.tar.gz
+wget https://download.oracle.com/otn/java/jdk/11.0.12+8/f411702ca7704a54a79ead0c2e0942a3/jdk-11.0.12_linux-x64_bin.tar.gz
+
+jabba install 1.8.301-oracle=tgz+file:///home/bj/jdk-8u301-linux-x64.tar.gz
+jabba install 1.11.012-oracle=tgz+file:///home/bj/jdk-11.0.12_linux-x64_bin.tar.gz
+
+// 检查安装
+jabba ls
+
+// 设置默认
+jabba alias default 1.8
+java -version
+
+sudo apt install maven
+mvn -v
+
+```
+
+
 
 
