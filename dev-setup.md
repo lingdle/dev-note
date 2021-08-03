@@ -188,6 +188,11 @@ java -version
 
 sudo apt install maven
 mvn -v
+mvn -X
+mvn help:effective-settings
+mvn help:system
+
+// 如果配置 mvn 私服， 则需要修改 setting.xml
 
 ```
 
