@@ -138,6 +138,11 @@ nrm use taobao
 // 这样使用自己的私有的nexus源
 nrm add nexus http://nexus-host:port/nexus-repo
 nrm use nexus
+
+// 可选的npm 工具全局安装
+npm install -g yarn
+npm install -g lerna
+
 ```
 
 6. 配置git环境
