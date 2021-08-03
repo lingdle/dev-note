@@ -2,7 +2,7 @@
 ## Widowns 10+ WSL
 
 ### 概述
-1. 安装常用开发工具： WebStorm/IDEA/Sublime
+1. 安装常用开发工具： WebStorm/IDEA/Sublime/Windows Terminal Preview
 2. 定制一个好用的Linux终端： WSL:Ubuntu terminal
 3. 在编辑器中配置默认终端为： WSL:Ubuntu terminal
 
@@ -30,6 +30,8 @@
     > 好用的Sublime插件： 
     > - Terminus [参考这里](https://packagecontrol.io/packages/Terminus) `https://packagecontrol.io/packages/Terminus`
     > - Timenow [参考这里](https://packagecontrol.io/packages/Timenow) `https://packagecontrol.io/packages/Timenow`
+
+- Windows Terminal Preview : 不错的终端集成工具 [参考这里](https://github.com/microsoft/terminal) `https://github.com/microsoft/terminal`
 
 #### 定制一个好用的Linux终端：WSL:Ubuntu
 1. 安装 WSL [参考这里](https://docs.microsoft.com/zh-cn/windows/wsl/) `https://docs.microsoft.com/zh-cn/windows/wsl/`
@@ -65,7 +67,8 @@ git --version
 // 自己判断是否要升级git,执行以下命令
 sudo apt install git
 // 有时候 github 拉取代码网络超时，后续下载安装过程中，可能是需要一把梯子然后设置好代理, 主机允许 lan 连接
-export http_proxy=http://192.168.3.9:7890 & export https_proxy=http://192.168.3.9:7890
+export http_proxy=http://your-proxy-ip:7890
+export https_proxy=http://your-proxy-ip:7890
 // 测试以下
 curl -I https://raw.github.com
 ```
@@ -88,12 +91,16 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 // 启用插件
 vim ~/.zshrc
 plugins=( git zsh-autosuggestions zsh-syntax-highlighting)
-source ~/.zshrc
 
 // 设置 alias
 alias subl="/mnt/d/develop/SublimeText/subl.exe"
 alias idea="/mnt/your/JetBrains/IDEA/HomePath/bin/idea64.exe"
 alias webs="/mnt/your/JetBrains/WebStorm/HomePath/bin/webstorm64.exe"
+alias proxy="export http_proxy=http://your-proxy-ip:7890 && export https_proxy=http://your-proxy-ip:7890"
+alias unproxy="unset http_proxy && unset https_proxy"
+alias cproxy="echo http_proxy=$http_proxy && echo https_proxy=$https_proxy"
+
+source ~/.zshrc
 ```
 
 5. 定制 node 环境： [参考这里](https://github.com/nvm-sh/nvm) `https://github.com/nvm-sh/nvm`
