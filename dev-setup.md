@@ -139,7 +139,7 @@ nrm use taobao
 nrm add nexus http://nexus-host:port/nexus-repo
 nrm use nexus
 
-// 可选的npm 工具全局安装
+// 可选的 npm 工具全局安装
 npm install -g yarn
 npm install -g lerna
 
