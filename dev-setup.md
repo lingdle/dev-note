@@ -72,6 +72,13 @@ export https_proxy=http://your-proxy-ip:port
 // 测试一下
 curl -I https://raw.github.com
 ```
+> 想使用 linux gui 的安装下面的官方桌面
+```bash
+sudo apt install ubuntu-gnome-desktop
+
+// 如果安装不成功，按提示可能需要再更新一下
+sudo apt update --fix-missing
+```
 
 4. 定制 zsh + oh-my-zsh terminal [参考这里](https://github.com/ohmyzsh/ohmyzsh/wiki) `https://github.com/ohmyzsh/ohmyzsh/wiki`
 ```
