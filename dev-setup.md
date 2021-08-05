@@ -14,7 +14,8 @@
 #### 安装好用的开发工具
 - jetbrains 全家桶 [参考这里](https://www.jetbrains.com/zh-cn/toolbox-app/) `https://www.jetbrains.com/zh-cn/toolbox-app/`
 
-    > 如何破解 [参考这里](https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html) `https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html`
+    > 如何破解 [参考这里](https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html) `https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html`  
+    > - `https://plugins.zhile.io` `IDE Eval Reset`
     > 好用的插件
     > - AutoLink 控制台链接支持点击打开文件  
 
