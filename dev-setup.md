@@ -14,8 +14,10 @@
 #### 安装好用的开发工具
 - jetbrains 全家桶 [参考这里](https://www.jetbrains.com/zh-cn/toolbox-app/) `https://www.jetbrains.com/zh-cn/toolbox-app/`
 
-    > 如何破解 [参考这里](https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html) `https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html`  
-    > - `https://plugins.zhile.io` `IDE Eval Reset`  
+    > 如何破解 [参考这里](https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html) `https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html`   
+    > `https://plugins.zhile.io`  
+    > `IDE Eval Reset`
+ 
     > 好用的插件
     > - AutoLink 控制台链接支持点击打开文件  
 
@@ -79,6 +81,16 @@ sudo apt install xfce4
 
 // 如果安装不成功，按提示可能需要再更新一下
 sudo apt update --fix-missing
+
+// 启动 xfce4
+startxfce4
+
+// DPI 配置
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+export QT_SCALE_FACTOR=2
+export GDK_SCALE=1
+export GDK_DPI_SCALE=2
+export LIBGL_ALWAYS_INDIRECT=1
 ```
 
 4. 定制 zsh + oh-my-zsh terminal [参考这里](https://github.com/ohmyzsh/ohmyzsh/wiki) `https://github.com/ohmyzsh/ohmyzsh/wiki`
