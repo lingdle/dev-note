@@ -1,5 +1,7 @@
 # 开发环境搭建
-## Widowns 10+ WSL
+## Widowns 10 + WSL  Ubuntu
+
+> 有了更丝滑的方案，正在试用中... 踩完坑后再更新
 
 ### 概述
 1. 安装常用开发工具： WebStorm/IDEA/Sublime/Windows Terminal Preview
@@ -91,6 +93,7 @@ export QT_SCALE_FACTOR=2
 export GDK_SCALE=1
 export GDK_DPI_SCALE=2
 export LIBGL_ALWAYS_INDIRECT=1
+
 ```
 
 4. 定制 zsh + oh-my-zsh terminal [参考这里](https://github.com/ohmyzsh/ohmyzsh/wiki) `https://github.com/ohmyzsh/ohmyzsh/wiki`
