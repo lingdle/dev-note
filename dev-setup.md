@@ -116,11 +116,14 @@ vim ~/.zshrc
 plugins=( git zsh-autosuggestions zsh-syntax-highlighting )
 
 // 设置 alias
-JetBrainsToolHome="/mnt/c/Users/username/AppData/Local/JetBrains/Toolbox/apps"
-alias idea="$JetBrainsToolHome/IDEA-U/ch-0/212.4746.92/bin/idea64.exe"
-alias webs="$JetBrainsToolHome/WebStorm/ch-0/212.4746.80/bin/webstorm64.exe"
-alias subl="/mnt/your-sublime-homepath/subl.exe"
-alias proxy="export http_proxy=http://your-proxy-ip:port && export https_proxy=http://your-proxy-ip:port"
+JetBrainsToolHome="/opt/jetbrains-toolbox-1.21.9547/"
+WSL_HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}')
+
+alias toolbox="nohup $JetBrainsToolHome/jetbrains-toolbox >/dev/null 2>&1 &"
+alias idea="nohup $JetBrainsToolHome/apps/IDEA-U/ch-0/212.4746.92/bin/idea.sh >/dev/null 2>&1 &"
+alias webs="nohup $JetBrainsToolHome/apps/WebStorm/ch-0/212.4746.80/bin/webstorm.sh >/dev/null 2>&1 &"
+alias subl="/mnt/d/dev/Sublime\ Text/subl.exe"
+alias proxy="export http_proxy=http://$WSL_HOST_IP:7890 && export https_proxy=http://$WSL_HOST_IP:7890"
 alias unproxy="unset http_proxy && unset https_proxy"
 alias cproxy='echo "http_proxy=$http_proxy" && echo "https_proxy=$https_proxy"'
 
