@@ -89,9 +89,9 @@ startxfce4
 
 // DPI 配置
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
-export QT_SCALE_FACTOR=2
+export QT_SCALE_FACTOR=1
 export GDK_SCALE=1
-export GDK_DPI_SCALE=2
+export GDK_DPI_SCALE=1
 export LIBGL_ALWAYS_INDIRECT=1
 
 ```
@@ -116,6 +116,9 @@ vim ~/.zshrc
 plugins=( git zsh-autosuggestions zsh-syntax-highlighting )
 
 // 设置 alias
+wget https://download-cdn.jetbrains.com/toolbox/jetbrains-toolbox-1.20.8352.tar.gz
+tar -zxvf jetbrains-toolbox-1.20.8352.tar.gz
+
 JetBrainsToolHome="/opt/jetbrains-toolbox-1.21.9547/"
 WSL_HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}')
 
