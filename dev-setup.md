@@ -77,24 +77,7 @@ export https_proxy=http://your-proxy-ip:port
 // 测试一下
 curl -I https://raw.github.com
 ```
-> 想使用 linux gui 的安装下面的桌面
-```bash
-sudo apt install xfce4
 
-// 如果安装不成功，按提示可能需要再更新一下
-sudo apt update --fix-missing
-
-// 启动 xfce4
-startxfce4
-
-// DPI 配置
-export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
-export QT_SCALE_FACTOR=1
-export GDK_SCALE=1
-export GDK_DPI_SCALE=1
-export LIBGL_ALWAYS_INDIRECT=1
-
-```
 
 4. 定制 zsh + oh-my-zsh terminal [参考这里](https://github.com/ohmyzsh/ohmyzsh/wiki) `https://github.com/ohmyzsh/ohmyzsh/wiki`
 ```
@@ -114,22 +97,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 // 启用插件
 vim ~/.zshrc
 plugins=( git zsh-autosuggestions zsh-syntax-highlighting )
-
-// 设置 alias
-wget https://download-cdn.jetbrains.com/toolbox/jetbrains-toolbox-1.20.8352.tar.gz
-tar -zxvf jetbrains-toolbox-1.20.8352.tar.gz
-
-JetBrainsToolHome="/opt/jetbrains-toolbox-1.21.9547/"
-WSL_HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}')
-
-alias toolbox="nohup $JetBrainsToolHome/jetbrains-toolbox >/dev/null 2>&1 &"
-alias idea="nohup $JetBrainsToolHome/apps/IDEA-U/ch-0/212.4746.92/bin/idea.sh >/dev/null 2>&1 &"
-alias webs="nohup $JetBrainsToolHome/apps/WebStorm/ch-0/212.4746.80/bin/webstorm.sh >/dev/null 2>&1 &"
-alias subl="/mnt/d/dev/Sublime\ Text/subl.exe"
-alias proxy="export http_proxy=http://$WSL_HOST_IP:7890 && export https_proxy=http://$WSL_HOST_IP:7890"
-alias unproxy="unset http_proxy && unset https_proxy"
-alias cproxy='echo "http_proxy=$http_proxy" && echo "https_proxy=$https_proxy"'
-
 source ~/.zshrc
 ```
 
@@ -222,6 +189,53 @@ mvn help:effective-settings
 mvn help:system
 
 // 如果配置 mvn 私服， 则需要修改 setting.xml
+
+```
+
+8. 安装开发工具
+
+> window X410 + linux gui xfce4 + jetbrains-toolbox + sublime 组合很丝滑
+
+```bash
+sudo apt install xfce4
+
+// 如果安装不成功，按提示可能需要再更新一下
+sudo apt update --fix-missing
+// 启动 xfce4
+startxfce4
+
+# 安装最新版 jetbrains-toolbox
+wget https://download-cdn.jetbrains.com/toolbox/jetbrains-toolbox-1.21.9547.tar.gz
+sudo tar -zxvf jetbrains-toolbox-1.21.9547.tar.gz -C /opt
+
+# 记得首次启动toolbox后修改 toolbox 的 工具安装位置： /opt/jetbrains-toolbox-1.21.9547
+
+JetBrainsToolHome="/opt/jetbrains-toolbox-1.21.9547/"
+WSL_HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}')
+
+# 设置 alias
+alias toolbox="nohup $JetBrainsToolHome/jetbrains-toolbox >/dev/null 2>&1 &"
+alias idea="nohup $JetBrainsToolHome/apps/IDEA-U/ch-0/212.4746.92/bin/idea.sh >/dev/null 2>&1 &"
+alias webs="nohup $JetBrainsToolHome/apps/WebStorm/ch-0/212.4746.80/bin/webstorm.sh >/dev/null 2>&1 &"
+
+alias proxy="export http_proxy=http://$WSL_HOST_IP:7890 && export https_proxy=http://$WSL_HOST_IP:7890"
+alias unproxy="unset http_proxy && unset https_proxy"
+alias cproxy='echo "http_proxy=$http_proxy" && echo "https_proxy=$https_proxy"'
+
+# DPI 配置
+export DISPLAY=$WSL_HOST_IP:0.0
+export QT_SCALE_FACTOR=1
+export GDK_SCALE=1
+export GDK_DPI_SCALE=1
+export LIBGL_ALWAYS_INDIRECT=1
+
+# 安装 sublime
+
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo apt install apt-transport-https
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update
+sudo apt-get install sublime-text
 
 ```
 
