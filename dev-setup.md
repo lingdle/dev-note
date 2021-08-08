@@ -40,7 +40,10 @@ wsl --install -d Ubuntu
 2. 在 Ubuntu 控制台执行 wsl-ubuntu-dev-env-init.sh
 
 ```bash
-export http_proxy=http://$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):7890 && export https_proxy=http://$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):7890
+# 设置代理
+export http_proxy=http://$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):7890
+export https_proxy=http://$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):7890
+# 执行构建脚本
 curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/wsl-ubuntu-dev-env-init.sh | bash
 # 手动启用 zsh
 chsh -s /bin/zsh
