@@ -17,13 +17,11 @@ nvm install --lts
 
 # 全局安装 npm 常用工具
 npm install -g nrm
-npm install -g yarn
-npm install -g lerna
-
-# 安装 nrm
-npm install -g nrm
 # 切换国内npm镜像源
 nrm use taobao
+
+npm install -g yarn
+npm install -g lerna
 
 
 # 配置 git
