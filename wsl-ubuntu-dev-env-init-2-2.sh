@@ -37,9 +37,9 @@ git config --global core.autocrlf input
 git config --global core.safecrlf true
 
 # 配置 java
-jabba install ibm@1.8
-jabba use ibm@1.8
-jabba alias default ibm@1.8
+#jabba install ibm@1.8
+#jabba use ibm@1.8
+#jabba alias default ibm@1.8
 
 
 # 将开发工具 移动到 /opt 下
