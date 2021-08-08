@@ -21,7 +21,7 @@ wsl -s UbuntuDevOS
 ubuntudevos config --default-user dev
 ```
 
-4. 常用 wsl 命令备忘
+3. 常用 wsl 命令备忘
 
 ```
 wsl -l -v
