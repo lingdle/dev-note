@@ -9,12 +9,28 @@
 1. 在 Windows 系统上安装 Windows Terminal Preview：不错的终端集成工具 [参考这里](https://github.com/microsoft/terminal) `https://github.com/microsoft/terminal`
 2. 在 Windows 系统上准备好梯子，并启用 LAN 模式，让 WSL 可以使用梯子稳定下载 github 上的脚本
 3. 如果只想开箱即用，请直接阅读 **[开箱即用](#开箱即用)**
-4. 如果关注具体构建逻辑，请继续阅读 **[WSL Ubuntu Setup](#WSL Ubuntu Setup)**
+4. 如果关注具体构建逻辑，请继续阅读 **[手动构建](#手动构建)**
 
 ## 开箱即用
+1. 下载已经手动构建好的 WSL distribution [点击下载]() `下载地址`
+2. 在 Windows 系统终端执行以下命令导入 WSL 分发
+```
+# WSL 分发下载到 d:/wslapps/UbuntuDevOS.tar 后导入
+wsl --import UbuntuDevOS d:/wslapps/UbuntuDevOS.tar --version 2
+wsl -s UbuntuDevOS
+ubuntudevos config --default-user dev
+```
 
+4. 常用 wsl 命令备忘
 
-## WSL Ubuntu Setup
+```
+wsl -l -v
+wsl --shutdown
+wsl --export Ubuntu d:/wslapps/UbuntuDevOS.tar
+
+```
+
+## 手动构建
 1. 在 window 系统控制台
 
 ```bash
