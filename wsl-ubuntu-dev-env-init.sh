@@ -113,7 +113,7 @@ JET_BRAINS_HOME=/opt/jetbrains
 if [ ! -d "$JET_BRAINS_HOME" ]; then
 # 安装最新版 jetbrains-toolbox
 cd /opt
-wget https://download-cdn.jetbrains.com/toolbox/jetbrains-toolbox-1.21.9547.tar.gz
+sudo wget https://download-cdn.jetbrains.com/toolbox/jetbrains-toolbox-1.21.9547.tar.gz
 sudo tar -zxvf jetbrains-toolbox-1.21.9547.tar.gz -C $JET_BRAINS_HOME
 
 echo '# alias 配置
