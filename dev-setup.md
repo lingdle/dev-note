@@ -39,36 +39,27 @@ wsl --install -d Ubuntu
 
 2. 在 Ubuntu 控制台执行 wsl-ubuntu-dev-env-init.sh
 
+- 设置代理
 ```bash
-# 设置代理
 export http_proxy=http://$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):7890
 export https_proxy=http://$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):7890
-# 执行构建脚本
-curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/wsl-ubuntu-dev-env-init.sh | bash
-# 手动启用 zsh
+```
+- 执行构建脚本
+```bash
+curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/wsl-ubuntu-dev-env-init-2-1.sh | bash
+```
+- 手动启用 zsh
+```bash
 chsh -s /bin/zsh
 ```
+- 执行优化脚本
+```bash
+curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/wsl-ubuntu-dev-env-init-2-2.sh | bash
+```
 
-3. 退出并重启 terminal ，配置常用环境
+3. 退出并重启 terminal ，优化配置
 
 ```bash
-
-# 设置 alias `vim ~/.zshrc`
-alias toolbox="nohup $JetBrainsToolHome/jetbrains-toolbox >/dev/null 2>&1 &"
-alias idea="nohup $JetBrainsToolHome/apps/IDEA-U/ch-0/212.4746.92/bin/idea.sh >/dev/null 2>&1 &"
-alias webs="nohup $JetBrainsToolHome/apps/WebStorm/ch-0/212.4746.80/bin/webstorm.sh >/dev/null 2>&1 &"
-
-alias proxy="export http_proxy=http://$WSL_HOST_IP:7890 && export https_proxy=http://$WSL_HOST_IP:7890"
-alias unproxy="unset http_proxy && unset https_proxy"
-alias cproxy='echo "http_proxy=$http_proxy" && echo "https_proxy=$https_proxy"'
-
-# 安装最新版 nodejs
-nvm install --lts
-# 安装 nrm
-npm install -g nrm
-# 切换国内npm镜像源
-nrm use taobao
-
 # 定制 nexus 私有源
 nrm add nexus http://nexus-host:port/nexus-repo
 nrm use nexus
@@ -77,25 +68,16 @@ nrm use nexus
 mvn -X
 vim ~/.m2/setting.xml
 
-# 全局安装 npm 常用工具
-npm install -g nrm
-npm install -g yarn
-npm install -g lerna
-
 # 配置git
 git config --global user.name "username"
 git config --global user.email "name@domain.com"
 
 
-# 安装jdk
-# wget https://download.oracle.com/otn/java/jdk/8u301-b09/d3c52aa6bfa54d3ca74e617f18309292/jdk-8u301-linux-x64.tar.gz
-# wget https://download.oracle.com/otn/java/jdk/11.0.12+8/f411702ca7704a54a79ead0c2e0942a3/jdk-11.0.12_linux-x64_bin.tar.gz
-# jabba install 1.8.301-oracle=tgz+file:///home/bj/jdk-8u301-linux-x64.tar.gz
-# jabba install 1.11.012-oracle=tgz+file:///home/bj/jdk-11.0.12_linux-x64_bin.tar.gz
-
-jabba install ibm@1.8
-jabba use ibm@1.8
-jabba alias default ibm@1.8
+# 安装 oracle jdk
+wget https://download.oracle.com/otn/java/jdk/8u301-b09/d3c52aa6bfa54d3ca74e617f18309292/jdk-8u301-linux-x64.tar.gz
+wget https://download.oracle.com/otn/java/jdk/11.0.12+8/f411702ca7704a54a79ead0c2e0942a3/jdk-11.0.12_linux-x64_bin.tar.gz
+jabba install 1.8.301-oracle=tgz+file:///home/bj/jdk-8u301-linux-x64.tar.gz
+jabba install 1.11.012-oracle=tgz+file:///home/bj/jdk-11.0.12_linux-x64_bin.tar.gz
 
 java --version
 ```
