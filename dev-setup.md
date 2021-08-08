@@ -42,11 +42,14 @@ wsl --install -d Ubuntu
 ```bash
 export http_proxy=http://$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):7890 && export https_proxy=http://$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):7890
 curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/wsl-ubuntu-dev-env-init.sh | bash
+# 手动启用 zsh
+chsh -s /bin/zsh
 ```
 
 3. 退出并重启 terminal ，配置常用环境
 
 ```bash
+
 # 设置 alias `vim ~/.zshrc`
 alias toolbox="nohup $JetBrainsToolHome/jetbrains-toolbox >/dev/null 2>&1 &"
 alias idea="nohup $JetBrainsToolHome/apps/IDEA-U/ch-0/212.4746.92/bin/idea.sh >/dev/null 2>&1 &"
