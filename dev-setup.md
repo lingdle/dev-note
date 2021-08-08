@@ -52,9 +52,9 @@ curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/wsl-ubuntu-
 ```bash
 chsh -s /bin/zsh
 ```
-- 退出并重启 terminal 后执行优化脚本
-```bash
-curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/wsl-ubuntu-dev-env-init-2-2.sh | bash
+- 退出并重启 terminal 后执行优化 zsh 脚本
+```zsh
+curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/wsl-ubuntu-dev-env-init-2-2.sh | zsh
 ```
 
 3. 优化配置
