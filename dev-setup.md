@@ -48,16 +48,16 @@ export https_proxy=http://$(cat /etc/resolv.conf | grep nameserver | awk '{print
 ```bash
 curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/wsl-ubuntu-dev-env-init-2-1.sh | bash
 ```
-- 手动启用 zsh
+- 手动启用 zsh ，执行后退出并重启 terminal
 ```bash
 chsh -s /bin/zsh
 ```
-- 执行优化脚本
+- 退出并重启 terminal 后执行优化脚本
 ```bash
 curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/wsl-ubuntu-dev-env-init-2-2.sh | bash
 ```
 
-3. 退出并重启 terminal ，优化配置
+3. 优化配置
 
 ```bash
 # 定制 nexus 私有源
