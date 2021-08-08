@@ -1,7 +1,9 @@
-#!/bin/bash
+#!/bin/zsh
 # Init dev env for WSL Ubuntu : 2-2
 
 set -xe
+
+source ~/.zshrc
 
 # 剔除 windows 中的命令，防止 npm 等命令污染
 export PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g')
