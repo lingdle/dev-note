@@ -46,9 +46,9 @@ git config --global core.safecrlf true
 sudo mv ~/jetbrains /opt/
 
 # 配置 alias & display
-SOME_CONFIG='
+SOME_CONFIG=$'
 # alias config
-WSL_HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk ''{print $2; exit;}'')
+WSL_HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk \'{print $2; exit;}\')
 JET_BRAINS_HOME=/opt/jetbrains
 JET_BRAINS_TOOLBOX=jetbrains-toolbox-1.21.9547
 
@@ -58,7 +58,7 @@ alias toolbox="nohup $JET_BRAINS_HOME/$JET_BRAINS_TOOLBOX/jetbrains-toolbox >/de
 
 alias proxy="export http_proxy=http://$WSL_HOST_IP:7890 && export https_proxy=http://$WSL_HOST_IP:7890"
 alias unproxy="unset http_proxy && unset https_proxy"
-alias cproxy=''echo "http_proxy=$http_proxy" && echo "https_proxy=$https_proxy"''
+alias cproxy=\'echo "http_proxy=$http_proxy" && echo "https_proxy=$https_proxy"\'
 
 # display config
 export DISPLAY=$WSL_HOST_IP:0.0
