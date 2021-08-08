@@ -108,17 +108,13 @@ fi
 
 
 # 安装开发工具
-JET_BRAINS_HOME=/opt/jetbrains
+JET_BRAINS_HOME=~/jetbrains
+JET_BRAINS_TOOLBOX=jetbrains-toolbox-1.21.9547.tar.gz
 if [ ! -d "$JET_BRAINS_HOME" ]; then
 # 安装最新版 jetbrains-toolbox
-cd /opt
-sudo wget https://download-cdn.jetbrains.com/toolbox/jetbrains-toolbox-1.21.9547.tar.gz
-sudo tar -zxvf jetbrains-toolbox-1.21.9547.tar.gz -C $JET_BRAINS_HOME
-
-echo '# alias 配置
-JET_BRAINS_HOME=/opt/jetbrains
-alias toolbox="nohup $JET_BRAINS_HOME/jetbrains-toolbox-1.21.9547/jetbrains-toolbox >/dev/null 2>&1 &"
-' >> ~/.zshrc
+mkdir -p $JET_BRAINS_HOME
+wget https://download-cdn.jetbrains.com/toolbox/$JET_BRAINS_TOOLBOX -P $JET_BRAINS_HOME
+tar -zxvf $JET_BRAINS_HOME/$JET_BRAINS_TOOLBOX -C $JET_BRAINS_HOME
 fi
 
 if [ ! -x "$(command -v subl)" ]; then
