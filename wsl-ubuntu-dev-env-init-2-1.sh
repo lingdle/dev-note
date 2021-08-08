@@ -1,5 +1,5 @@
 #!/bin/bash
-# Init dev env for WSL Ubuntu
+# Init dev env for WSL Ubuntu : 2-1
 
 set -xe
 
@@ -37,16 +37,6 @@ fi
 # 检查并安装 git
 if [ ! -x "$(command -v git)" ]; then
 sudo apt install git -y
-# 常用配置
-# git config --global user.name "username"
-# git config --global user.email "name@domain.com"
-
-git config --global credential.helper store
-git config --global core.editor vim
-
-git config --global core.autocrlf input
-git config --global core.safecrlf true
-
 fi
 
 # 安装zsh
