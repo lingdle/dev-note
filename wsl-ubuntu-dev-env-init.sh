@@ -54,7 +54,6 @@ if [ ! -x "$(command -v zsh)" ]; then
 sudo apt install zsh -y
 # 安装 oh-my-zsh : 如果安装后没有自动设置zsh为默认 terminal，则需要手动设置
 curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
-chsh -s /bin/zsh
 # 插件：命令联想提示
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # 插件：命令错误检查
