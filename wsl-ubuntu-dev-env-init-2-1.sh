@@ -89,21 +89,11 @@ fi
 # 安装 xfce4
 
 if [ ! -x "$(command -v startxfce4)" ]; then
-
 set +e
 sudo apt install xfce4 -y
 sudo apt update --fix-missing -y
 sudo apt install xfce4 -y
 set -e
-
-# DPI 配置
-echo '# xfce4 config
-export DISPLAY=$WSL_HOST_IP:0.0
-export QT_SCALE_FACTOR=1
-export GDK_SCALE=1
-export GDK_DPI_SCALE=1
-export LIBGL_ALWAYS_INDIRECT=1
-' >> ~/.zshrc
 fi
 
 
