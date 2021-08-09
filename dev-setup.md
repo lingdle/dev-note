@@ -3,6 +3,15 @@
 ## 前言
 1. 价值观： 仅将 Windows 系统作为图形界面， 所有的**开发工具**和**开发工作**都将运行在 WSL:Linux 系统上(本文特指：WSL:Ubuntu)
 2. 如果与以上价值观不符合，那就无需继续阅读
+3. 本文内容在 以下 Windows 版本运行通过 
+```
+版本	Windows 10 家庭中文版
+版本号	20H2
+安装日期	‎2021/‎7/‎30
+操作系统内部版本	19042.1151
+序列号	R90MSVEL
+体验	Windows Feature Experience Pack 120.2212.3530.0
+```
 
 
 ## 前置准备
@@ -10,6 +19,7 @@
 2. 在 Windows 系统上准备好梯子，并启用 LAN 模式，让 WSL 可以使用梯子稳定下载 github 上的脚本
 3. 如果只想开箱即用，请直接阅读 **[开箱即用](#开箱即用)**
 4. 如果关注具体构建逻辑，请继续阅读 **[手动构建](#手动构建)**
+5. 不论以上哪种方式使用，都应该在 Windows 系统安装 X Server 软件，本文特指 [X410](https://www.microsoft.com/zh-cn/p/x410/9nlp712zmn9q?activetab=pivot:overviewtab) `https://www.microsoft.com/zh-cn/p/x410/9nlp712zmn9q?activetab=pivot:overviewtab`
 
 ## 开箱即用
 1. 下载已经手动构建好的 WSL distribution [点击下载]() `下载地址`
