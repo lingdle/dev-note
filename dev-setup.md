@@ -33,6 +33,29 @@ wsl --import Ubuntu d:/wslapps/UbuntuDevPlus d:/wslapps/UbuntuDevPlus.tar --vers
 wsl -s Ubuntu
 ubuntu config --default-user dev
 ```
+> 预设命令
+
+```bash
+# 启动 jetbrains-toolbox
+toolbox
+
+# 启动 jetbrains-idea
+idea
+idea . 
+
+# 启动 jetbrains-webstorm
+webs
+webs .
+
+# 启动 sublime
+subl
+subl .
+
+# 设置本地代理
+proxy
+unproxy
+cproxy
+```
 
 3. 常用 wsl 命令备忘
 
