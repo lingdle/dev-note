@@ -15,10 +15,13 @@
 1. 下载已经手动构建好的 WSL distribution [点击下载]() `下载地址`
 2. 在 Windows 系统终端执行以下命令导入 WSL 分发
 ```
-# WSL 分发下载到 d:/wslapps/UbuntuDevOS.tar 后导入
-wsl --import UbuntuDevOS d:/wslapps/UbuntuDevOS.tar --version 2
-wsl -s UbuntuDevOS
-ubuntudevos config --default-user dev
+# WSL 分发下载到 d:/wslapps/UbuntuDevPlus.tar 后导入
+wsl -l -v
+wsl --shutdown
+wsl --unregister Ubuntu
+wsl --import Ubuntu d:/wslapps/UbuntuDevPlus.tar --version 2
+wsl -s Ubuntu
+ubuntu config --default-user dev
 ```
 
 3. 常用 wsl 命令备忘
@@ -26,7 +29,7 @@ ubuntudevos config --default-user dev
 ```
 wsl -l -v
 wsl --shutdown
-wsl --export Ubuntu d:/wslapps/UbuntuDevOS.tar
+wsl --export Ubuntu d:/wslapps/UbuntuDevPlus.tar
 
 ```
 
