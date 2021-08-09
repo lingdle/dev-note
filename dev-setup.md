@@ -80,9 +80,10 @@ git config --global user.email "name@domain.com"
 # 安装 oracle jdk
 wget https://download.oracle.com/otn/java/jdk/8u301-b09/d3c52aa6bfa54d3ca74e617f18309292/jdk-8u301-linux-x64.tar.gz
 wget https://download.oracle.com/otn/java/jdk/11.0.12+8/f411702ca7704a54a79ead0c2e0942a3/jdk-11.0.12_linux-x64_bin.tar.gz
-jabba install 1.8.301-oracle=tgz+file:///home/bj/jdk-8u301-linux-x64.tar.gz
-jabba install 1.11.012-oracle=tgz+file:///home/bj/jdk-11.0.12_linux-x64_bin.tar.gz
-
+jabba install 1.8.301-oracle=tgz+file:///home/dev/jdk-8u301-linux-x64.tar.gz
+jabba install 1.11.012-oracle=tgz+file:///home/dev/jdk-11.0.12_linux-x64_bin.tar.gz
+jabba use 1.8.301-oracle
+jabba alias default 1.8.301-oracle
 java --version
 ```
 4. 常用开发工具
