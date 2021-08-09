@@ -33,7 +33,7 @@ wsl --import Ubuntu d:/wslapps/UbuntuDevPlus d:/wslapps/UbuntuDevPlus.tar --vers
 wsl -s Ubuntu
 ubuntu config --default-user dev
 ```
-> 预设命令
+> WLS:Ubuntu 中的预设命令
 
 ```bash
 # 启动 jetbrains-toolbox
