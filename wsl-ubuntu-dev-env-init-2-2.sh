@@ -53,8 +53,8 @@ JET_BRAINS_HOME=/opt/jetbrains
 JET_BRAINS_TOOLBOX=jetbrains-toolbox-1.21.9547
 
 alias toolbox="nohup $JET_BRAINS_HOME/$JET_BRAINS_TOOLBOX/jetbrains-toolbox >/dev/null 2>&1 &"
-#alias idea="nohup $JetBrainsToolHome/apps/IDEA-U/ch-0/212.4746.92/bin/idea.sh >/dev/null 2>&1 &"
-#alias webs="nohup $JetBrainsToolHome/apps/WebStorm/ch-0/212.4746.80/bin/webstorm.sh >/dev/null 2>&1 &"
+#alias idea="nohup $JET_BRAINS_HOME/apps/IDEA-U/ch-0/212.4746.92/bin/idea.sh >/dev/null 2>&1 &"
+#alias webs="nohup $JET_BRAINS_HOME/apps/WebStorm/ch-0/212.4746.80/bin/webstorm.sh >/dev/null 2>&1 &"
 
 alias proxy="export http_proxy=http://$WSL_HOST_IP:7890 && export https_proxy=http://$WSL_HOST_IP:7890"
 alias unproxy="unset http_proxy && unset https_proxy"
