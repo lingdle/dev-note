@@ -19,7 +19,7 @@
 wsl -l -v
 wsl --shutdown
 wsl --unregister Ubuntu
-wsl --import Ubuntu d:/wslapps/UbuntuDevPlus.tar --version 2
+wsl --import Ubuntu d:/wslapps d:/wslapps/UbuntuDevPlus.tar --version 2
 wsl -s Ubuntu
 ubuntu config --default-user dev
 ```
