@@ -60,10 +60,10 @@ cproxy
 3. 常用 wsl 命令备忘
 
 ```
+history -c
 wsl -l -v
 wsl --shutdown
 wsl --export Ubuntu d:/wslapps/UbuntuDevPlus.tar
-
 ```
 
 ## 手动构建
