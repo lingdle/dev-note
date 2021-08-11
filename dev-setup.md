@@ -122,7 +122,25 @@ jabba use 1.8.301-oracle
 jabba alias default 1.8.301-oracle
 java --version
 ```
-4. 常用开发工具
+
+4. 中文输入法， 这里特指 ibus 自带拼音输入法(ibus-pinyin) ，fcitx 相关输入法无法启动
+
+```
+# 拼音输入法需中文语言支持，安装简体中文
+sudo apt install language-pack-zh-hans
+
+# 配置shell 后台启动输入法
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export XMODIFIERS="@im=ibus"
+
+IBUS_RUNNING=$(ps -C ibus-daemon --no-header | wc -l)
+[ $IBUS_RUNNING -eq 0 ] && /usr/bin/ibus-daemon -d
+
+```
+
+
+5. 常用开发工具
 
 - jetbrains 全家桶 [参考这里](https://www.jetbrains.com/zh-cn/toolbox-app/) `https://www.jetbrains.com/zh-cn/toolbox-app/`
 
