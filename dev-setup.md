@@ -129,12 +129,14 @@ java --version
 # 拼音输入法需中文语言支持，安装简体中文
 sudo /etc/init.d/dbus restart
 sudo xfce4-session
-# 启动后进入 GUI 界面： 选则 Language Support 安装 简体中文 语言支持
-# 等待安装完成后打开 ibus 配置面板
+# 启动后进入 GUI 界面： 选择 Language Support 安装[简体中文]语言支持, 同时设置键盘输入法为 ibus (安装语言需要重启系统 `wsl --shutdown` )
+# 输入法推荐安装 ibus-pinyin (安装新输入法需要重启系统 `wsl --shutdown` )
+sudo apt install ibus-pinyin
+# 等待以上安装完成后，重启系统 `wsl --shutdown`，打开 ibus 配置面板
 sudo ibus-setup
 # 安装了中文语言后就可以看见 Chinese 语言选项
-# 最后选择输入法， 这里推荐安装 ibus-pinyin (安装新输入法需要重启系统 `wsl --shutdown` )
-sudo apt install ibus-pinyin
+# 选择输入法  ibus-pinyin (默认拼音输入法有乱码问题)
+
 
 # 配置用户 zsh :后台启动输入法 vim ~/.zshrc
 # input method
@@ -147,9 +149,8 @@ IBUS_RUNNING=$(ps -C ibus-daemon --no-header | wc -l)
 
 # 让配置生效 source ~/.zshrc
 
-# 配置默认输入法
-im-config -s ibus
-sudo ibus-setup
+# 配置输入法
+ibus-setup
 
 # 其他可用的输入法 
 sudo apt install ibus-sunpinyin
