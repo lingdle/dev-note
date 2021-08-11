@@ -127,7 +127,7 @@ java --version
 
 ```
 # 拼音输入法需中文语言支持，安装简体中文
-sudo apt install language-pack-zh-hans
+sudo apt install language-pack-zh-hans -y
 
 # 配置shell 后台启动输入法 vim ~/.zshrc
 export GTK_IM_MODULE=ibus
