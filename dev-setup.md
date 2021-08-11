@@ -136,8 +136,6 @@ sudo ibus-setup
 # 最后选择输入法， 这里推荐安装 ibus-pinyin (安装新输入法需要重启系统 `wsl --shutdown` )
 sudo apt install ibus-pinyin
 
-
-
 # 配置用户 zsh :后台启动输入法 vim ~/.zshrc
 # input method
 export GTK_IM_MODULE=ibus
@@ -148,7 +146,6 @@ IBUS_RUNNING=$(ps -C ibus-daemon --no-header | wc -l)
 [ $IBUS_RUNNING -eq 0 ] && [ -x /usr/bin/ibus-daemon ] /usr/bin/ibus-daemon -d
 
 # 让配置生效 source ~/.zshrc
-
 
 # 配置默认输入法
 im-config -s ibus
