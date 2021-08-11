@@ -145,7 +145,7 @@ export QT_IM_MODULE=ibus
 export XMODIFIERS="@im=ibus"
 
 IBUS_RUNNING=$(ps -C ibus-daemon --no-header | wc -l)
-[ $IBUS_RUNNING -eq 0 ] && [ -x /usr/bin/ibus-daemon ] /usr/bin/ibus-daemon -d
+[ $IBUS_RUNNING -eq 0 ] && [ -x /usr/bin/ibus-daemon ] && /usr/bin/ibus-daemon -d
 
 # 让配置生效 source ~/.zshrc
 
