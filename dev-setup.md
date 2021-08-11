@@ -131,7 +131,7 @@ sudo /etc/init.d/dbus restart
 sudo xfce4-session
 # 启动后进入 GUI 界面： 选择 Language Support 安装[简体中文]语言支持, 同时设置键盘输入法为 ibus (安装语言需要重启系统 `wsl --shutdown` )
 # 输入法推荐安装 ibus-pinyin (安装新输入法需要重启系统 `wsl --shutdown` )
-sudo apt install ibus-pinyin
+sudo apt install ibus-pinyin -y
 # 等待以上安装完成后，重启系统 `wsl --shutdown`，打开 ibus 配置面板
 sudo ibus-setup
 # 安装了中文语言后就可以看见 Chinese 语言选项
