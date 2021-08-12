@@ -57,7 +57,17 @@ unproxy
 cproxy
 ```
 
-3. 常用 wsl 命令备忘
+3. 个性化设置
+```
+mkdir -p ~/.m2
+vim ~/.m2/settings.xml
+nrm add nexus http://your-nexus-repo:port/context-path
+nrm use nexus
+git config --global user.name "username"
+git config --global user.email "name@example.com"
+```
+
+> 常用 wsl 命令备忘
 
 ```
 history -c
