@@ -182,7 +182,7 @@ sudo apt install ibus-pinyin
     > - AutoLink 控制台链接支持点击打开文件  
 
     > 检查和调优配置
-    > - VM Options: `-Xms2G` `-Xmx2G` `-XX:ReservedCodeCacheSize=1G`
+    > - VM Options: `-Xms2G` `-Xmx2G` `-XX:ReservedCodeCacheSize=1G` `-Drecreate.x11.input.method=true`
     > - 检查文件编码格式: UTF-8
     > - 检查 检查文件换行符: LF
     > - 检查 node.js and NPM 配置， 启用 yarn 为包管理器
