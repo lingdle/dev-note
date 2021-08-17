@@ -23,7 +23,7 @@ npm install -g nrm
 nrm use taobao
 
 npm install -g yarn
-npm install -g lerna
+npm install -g pnpm
 
 
 # 配置 git
