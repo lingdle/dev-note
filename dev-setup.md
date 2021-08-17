@@ -151,14 +151,28 @@ sudo ibus-setup
 
 
 # 配置用户 zsh :后台启动输入法 vim ~/.zshrc
+alias imfcitx='nohup fcitx-autostart >/dev/null 2>&1 &'
+alias imibus='/usr/bin/ibus-daemon -rdx'
+
+# display config
+export DISPLAY=$WSL_HOST_IP:0.0
+export QT_SCALE_FACTOR=2
+export GDK_SCALE=2
+export GDK_DPI_SCALE=1
+export LIBGL_ALWAYS_INDIRECT=1
+
 # input method
-export GTK_IM_MODULE=ibus
-export QT_IM_MODULE=ibus
-export XMODIFIERS="@im=ibus"
+#export XMI=ibus
+#export GTK_IM_MODULE=ibus
+#export QT_IM_MODULE=ibus
+#export XMODIFIERS="@im=ibus"
+#imibus
 
-IBUS_RUNNING=$(ps -C ibus-daemon --no-header | wc -l)
-[ $IBUS_RUNNING -eq 0 ] && [ -x /usr/bin/ibus-daemon ] && /usr/bin/ibus-daemon -d
-
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export DefaultIMModule=fcitx
+imfcitx
 # 让配置生效 source ~/.zshrc
 
 # 配置输入法
