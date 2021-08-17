@@ -187,7 +187,7 @@ sudo apt install fcitx-sunpinyin
     > - AutoLink 控制台链接支持点击打开文件  
 
     > 检查和调优配置
-    > - VM Options: `-Xms2G` `-Xmx2G` `-XX:ReservedCodeCacheSize=1G` `-Drecreate.x11.input.method=true`
+    > - VM Options: `-Xms2G` `-Xmx2G` `-XX:ReservedCodeCacheSize=1G` 大概率不需要设置： `-Drecreate.x11.input.method=true` 解决 x11 显示问题
     > - 检查文件编码格式: UTF-8
     > - 检查 检查文件换行符: LF
     > - 检查 node.js and NPM 配置， 启用 yarn 为包管理器
