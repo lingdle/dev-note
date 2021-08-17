@@ -60,12 +60,23 @@ alias proxy="export http_proxy=http://$WSL_HOST_IP:7890 && export https_proxy=ht
 alias unproxy="unset http_proxy && unset https_proxy"
 alias cproxy=\'echo "http_proxy=$http_proxy" && echo "https_proxy=$https_proxy"\'
 
+
 # display config
 export DISPLAY=$WSL_HOST_IP:0.0
 export QT_SCALE_FACTOR=1
 export GDK_SCALE=1
 export GDK_DPI_SCALE=1
 export LIBGL_ALWAYS_INDIRECT=1
+
+# input method config
+alias imfcitx='nohup fcitx-autostart >/dev/null 2>&1 &'
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export DefaultIMModule=fcitx
+imfcitx
+
 '
 
 echo "$SOME_CONFIG" >> ~/.zshrc
