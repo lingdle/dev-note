@@ -3,8 +3,9 @@
 ## 前言
 1. 价值观： 仅将 Windows 系统作为图形界面， 所有的**开发工具**和**开发工作**都将运行在 WSL:Linux 系统上(本文特指：WSL:Ubuntu)
 2. 如果与以上价值观不符合，那就无需继续阅读
-3. 已知问题： **【偶发现象】WSL:Ubuntu xfce4 键盘方向键和小键盘区域失效，输出为数字，可以确定是 搜狗输入法的问题，果断卸载后装上QQ拼音输入法解决**
-4. 本文内容在以下 Windows 版本运行通过 
+3. 已知问题已解决： **【偶发现象】WSL:Ubuntu xfce4 键盘方向键和小键盘区域失效，输出为数字，可以确定是windows宿主机搜狗输入法的问题，果断卸载后装上QQ拼音输入法解决**
+4. 已知问题：****
+5. 本文内容在以下 Windows 版本运行通过 
 ```
 版本	Windows 10 家庭中文版
 版本号	20H2
@@ -135,38 +136,27 @@ jabba alias default 1.8.301-oracle
 java --version
 ```
 
-4. 中文输入法， 这里特指 ibus 自带拼音输入法(ibus-pinyin) ， fcitx 相关输入法无法直接启动果断放弃
+4. 中文输入法， 这里fcitx-sunpinyin
 
 ```
 # 拼音输入法需中文语言支持，安装简体中文
 sudo /etc/init.d/dbus restart
 sudo xfce4-session
-# 启动后进入 GUI 界面： 选择 Language Support 安装[简体中文]语言支持, 同时设置键盘输入法为 ibus (安装语言需要重启系统 `wsl --shutdown` )
-# 输入法推荐安装 ibus-pinyin (安装新输入法需要重启系统 `wsl --shutdown` )
-sudo apt install ibus-pinyin -y
-# 等待以上安装完成后，重启系统 `wsl --shutdown`，打开 ibus 配置面板
-sudo ibus-setup
-# 安装了中文语言后就可以看见 Chinese 语言选项
-# 选择输入法  ibus-pinyin (默认拼音输入法有乱码问题)
 
+# 启动后进入 GUI 界面： 选择 Language Support 安装[简体中文]语言支持
 
+# 设置启用 fcitx 输入法
+im-config
+
+# 安装完后重启系统 `wsl --shutdown`
+
+# 添加 fcitx-sunpinyin 输入法
+fcitx-configtool
+
+# 如果 fcitx 未启动，则检查以下配置
 # 配置用户 zsh :后台启动输入法 vim ~/.zshrc
+
 alias imfcitx='nohup fcitx-autostart >/dev/null 2>&1 &'
-alias imibus='/usr/bin/ibus-daemon -rdx'
-
-# display config
-export DISPLAY=$WSL_HOST_IP:0.0
-export QT_SCALE_FACTOR=2
-export GDK_SCALE=2
-export GDK_DPI_SCALE=1
-export LIBGL_ALWAYS_INDIRECT=1
-
-# input method
-#export XMI=ibus
-#export GTK_IM_MODULE=ibus
-#export QT_IM_MODULE=ibus
-#export XMODIFIERS="@im=ibus"
-#imibus
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
@@ -174,15 +164,14 @@ export XMODIFIERS=@im=fcitx
 export DefaultIMModule=fcitx
 imfcitx
 
-fcitx-configtool
 # 让配置生效 source ~/.zshrc
 
 # 配置输入法
-ibus-setup
+citx-configtool
 
-# 其他可用的输入法 
-sudo apt install ibus-sunpinyin
-sudo apt install ibus-pinyin
+# 其他可用的 fcitx 输入法 
+sudo apt install fcitx-googlepinyin
+sudo apt install fcitx-sunpinyin
 ```
 
 
