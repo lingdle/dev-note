@@ -173,6 +173,8 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export DefaultIMModule=fcitx
 imfcitx
+
+fcitx-configtool
 # 让配置生效 source ~/.zshrc
 
 # 配置输入法
