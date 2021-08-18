@@ -156,14 +156,15 @@ fcitx-configtool
 # 如果 fcitx 未启动，则检查以下配置
 # 配置用户 zsh :后台启动输入法 vim ~/.zshrc
 
-alias imfcitx='nohup fcitx-autostart >/dev/null 2>&1 &'
+alias imfcitx='nohup fcitx >/dev/null 2>&1 &'
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export DefaultIMModule=fcitx
-imfcitx
 
+IMFCITX_RUNNING=$(ps -C fcitx --no-header | wc -l)
+[ $IMFCITX_RUNNING -eq 0 ] && [ -x /usr/bin/fcitx ] && imfcitx
 # 让配置生效 source ~/.zshrc
 
 # 配置输入法
