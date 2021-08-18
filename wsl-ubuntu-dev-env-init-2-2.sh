@@ -69,13 +69,15 @@ export GDK_DPI_SCALE=1
 export LIBGL_ALWAYS_INDIRECT=1
 
 # input method config
-alias imfcitx='nohup fcitx-autostart >/dev/null 2>&1 &'
+alias imfcitx='nohup fcitx >/dev/null 2>&1 &'
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export DefaultIMModule=fcitx
-imfcitx
+
+IMFCITX_RUNNING=$(ps -C fcitx --no-header | wc -l)
+[ $IMFCITX_RUNNING -eq 0 ] && [ -x /usr/bin/fcitx ] && imfcitx
 
 '
 
