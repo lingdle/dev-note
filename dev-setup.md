@@ -25,6 +25,12 @@
 
 ## 开箱即用
 1. 下载已经手动构建好的 WSL distribution [点击下载](https://www.aliyundrive.com/s/KVUAKLrMdT4) `https://www.aliyundrive.com/s/KVUAKLrMdT4` 8G+下载完成后重命名去掉.txt
+> 未合并的更改
+```
+alias imfcitx='nohup fcitx >/dev/null 2>&1 &'
+IMFCITX_RUNNING=$(ps -C fcitx --no-header | wc -l)
+[ $IMFCITX_RUNNING -eq 0 ] && [ -x /usr/bin/fcitx ] && imfcitx
+```
 2. 在 Windows 系统终端执行以下命令导入 WSL 分发
 ```
 # WSL 分发下载到 d:/wslapps/UbuntuDevPlus.tar 后导入
@@ -156,13 +162,12 @@ fcitx-configtool
 # 如果 fcitx 未启动，则检查以下配置
 # 配置用户 zsh :后台启动输入法 vim ~/.zshrc
 
-alias imfcitx='nohup fcitx >/dev/null 2>&1 &'
-
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export DefaultIMModule=fcitx
 
+alias imfcitx='nohup fcitx >/dev/null 2>&1 &'
 IMFCITX_RUNNING=$(ps -C fcitx --no-header | wc -l)
 [ $IMFCITX_RUNNING -eq 0 ] && [ -x /usr/bin/fcitx ] && imfcitx
 # 让配置生效 source ~/.zshrc
