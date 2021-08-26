@@ -168,7 +168,7 @@ IMFCITX_RUNNING=$(ps -C fcitx --no-header | wc -l)
 # 让配置生效 source ~/.zshrc
 
 # 配置输入法
-citx-configtool
+fcitx-configtool
 
 # 其他可用的 fcitx 输入法 
 sudo apt install fcitx-googlepinyin
