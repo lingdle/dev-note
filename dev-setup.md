@@ -22,6 +22,7 @@
 3. 如果只想开箱即用，请直接阅读 **[开箱即用](#开箱即用)**
 4. 如果关注具体构建逻辑，请继续阅读 **[手动构建](#手动构建)**
 5. 不论以上哪种方式使用，都应该在 Windows 系统安装 X Server 软件（据说Windows 11不用安装这些就可以支持 Linux GUI ,坐等升级...），本文特指 [X410](https://www.microsoft.com/zh-cn/p/x410/9nlp712zmn9q?activetab=pivot:overviewtab) `https://www.microsoft.com/zh-cn/p/x410/9nlp712zmn9q?activetab=pivot:overviewtab`
+6. x410 推荐配置 ： 开启 `Windowed Apps` 和 `Allow Public Access`
 
 ## 开箱即用
 1. 下载已经手动构建好的 WSL distribution [点击下载](https://www.aliyundrive.com/s/KVUAKLrMdT4) `https://www.aliyundrive.com/s/KVUAKLrMdT4` 8G+下载完成后重命名去掉.txt
