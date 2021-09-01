@@ -81,7 +81,7 @@ wsl --export Ubuntu d:/wslapps/UbuntuDevPlus.tar
 ```
 
 ## 手动构建
-> 在 Windows 系统上准备好梯子，并启用 LAN 模式，让 WSL 可以使用梯子稳定下载 github 上的脚本
+> 在 Windows 系统上准备好梯子，并启用 LAN 模式，让 WSL 可以使用梯子稳定下载 github 上的脚本  
 > 手动构建比较繁琐， 可能有遗漏的环节，推荐使用 **[开箱即用](#开箱即用)** 
 
 1. 在 window 系统控制台
