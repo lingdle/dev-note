@@ -24,6 +24,7 @@ nrm use taobao
 
 npm install -g yarn
 npm install -g pnpm
+pnpm install-completion zsh
 
 
 # 配置 git
