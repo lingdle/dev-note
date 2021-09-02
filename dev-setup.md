@@ -54,6 +54,9 @@ webs .
 subl
 subl .
 
+# 启动 chrome
+google-chrome
+
 # 设置本地代理
 proxy
 unproxy
@@ -202,6 +205,16 @@ sudo apt install fcitx-sunpinyin
     > 好用的Sublime插件： 
     > - Terminus [参考这里](https://packagecontrol.io/packages/Terminus) `https://packagecontrol.io/packages/Terminus`
     > - Timenow [参考这里](https://packagecontrol.io/packages/Timenow) `https://packagecontrol.io/packages/Timenow`
+
+- google chrome
+    > - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    > - sudo apt install ./google-chrome-stable_current_amd64.deb
+    > - 启动命令 google-chrome
+
+- vscode
+    > - wget https://az764295.vo.msecnd.net/stable/3866c3553be8b268c8a7f8c0482c0c0177aa8bfa/code_1.59.1-1629375198_amd64.deb
+    > - sudo apt install ./code_1.59.1-1629375198_amd64.deb
+    > - 启动命令 code
 
 
 
