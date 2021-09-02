@@ -25,7 +25,7 @@
 6. x410 推荐配置 ： 开启 `Windowed Apps` 和 `Allow Public Access`
 
 ## 开箱即用
-1. 下载已经手动构建好的 WSL distribution [点击下载](https://www.aliyundrive.com/s/KVUAKLrMdT4) `https://www.aliyundrive.com/s/KVUAKLrMdT4` 8G+下载完成后重命名去掉.txt
+1. 下载已经手动构建好的 WSL distribution [正在上传](https://www.aliyundrive.com/s/KVUAKLrMdT4) `https://www.aliyundrive.com/s/KVUAKLrMdT4` 9G+下载完成后重命名去掉.txt
 2. 在 Windows 系统终端执行以下命令导入 WSL 分发
 ```
 # WSL 分发下载到 d:/wslapps/UbuntuDevPlus.tar 后导入
