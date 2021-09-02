@@ -39,6 +39,8 @@ ubuntu config --default-user dev
 > WLS:Ubuntu 中的预设命令
 
 ```bash
+# dev 用户密码： 111111
+
 # 启动 jetbrains-toolbox
 toolbox
 
