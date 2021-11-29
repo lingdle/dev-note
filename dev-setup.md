@@ -219,6 +219,12 @@ sudo apt install fcitx-sunpinyin
     > - 启动命令 `code`
 
 
+6. 局域网访问设置
 
+```
+netsh interface portproxy show all
+netsh interface portproxy add v4tov4 listenport=3000 listenaddress=0.0.0.0 connectport=3000 connectaddress=172.17.54.125
+netsh interface portproxy delete v4tov4 listenport=3000 listenaddress=0.0.0.0 connectport=3000 connectaddress=172.17.54.125
+```
 
 
