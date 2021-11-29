@@ -219,7 +219,7 @@ sudo apt install fcitx-sunpinyin
     > - 启动命令 `code`
 
 
-6. 局域网访问设置
+## 局域网访问设置
 
 ```
 netsh interface portproxy show all
