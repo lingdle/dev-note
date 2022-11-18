@@ -18,7 +18,7 @@ OS 构建类型:      Multiprocessor Free
 ```
 
 ## 前置准备
-1. 在 Windwos 系统启用虚拟化技术：重点1：打开 **硬件（在BIOS中）** 虚拟化，重点2：打开 **软件（在‘启用或关闭window功能/Hyper-V功能’中）** 虚拟化
+1. 在 Windwos 系统启用虚拟化技术：  重点1：打开 **硬件（在BIOS中）** 虚拟化  重点2：打开 **软件（在‘启用或关闭window功能/Hyper-V功能’中）** 虚拟化
 2. 在 Windwos 系统启用 WSL 功能 [参考这里](https://docs.microsoft.com/zh-cn/windows/wsl/install-win10) `https://docs.microsoft.com/zh-cn/windows/wsl/install-win10`
 3. 在 Windows 系统上安装 Windows Terminal Preview：很不错的终端集成工具 [参考这里](https://github.com/microsoft/terminal) `https://github.com/microsoft/terminal`
 
