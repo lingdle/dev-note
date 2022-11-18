@@ -17,13 +17,21 @@ OS 构建类型:      Multiprocessor Free
 系统类型:         x64-based PC
 ```
 
-
 ## 前置准备
 1. 在 Windwos 系统启用虚拟化技术：重点1：打开 **硬件（在BIOS中）** 虚拟化，重点2：打开 **软件（在‘启用或关闭window功能/Hyper-V功能’中）** 虚拟化
 2. 在 Windwos 系统启用 WSL 功能 [参考这里](https://docs.microsoft.com/zh-cn/windows/wsl/install-win10) `https://docs.microsoft.com/zh-cn/windows/wsl/install-win10`
 3. 在 Windows 系统上安装 Windows Terminal Preview：很不错的终端集成工具 [参考这里](https://github.com/microsoft/terminal) `https://github.com/microsoft/terminal`
 4. 如果只想开箱即用，请直接阅读 **[开箱即用](#开箱即用)**
 5. 如果关注具体构建逻辑，请继续阅读 **[手动构建](#手动构建)**
+
+
+## 构建 devops 开发环境
+1. 打开 Ubuntu 子系统命令窗口，初始化系统配置> 用户名： devops 密码：******
+2. 切换 Ubuntu 子系统镜像源未 aliyun 镜像源，更新修复 Ubuntu 子系统
+3. 安装 浏览器 Chrome [参考这里]()
+4. 安装 devops 偏好工具
+5. 安装 jetbrains toolbox-app 全家桶 [参考这里](https://www.jetbrains.com/zh-cn/toolbox-app/)
+
 
 ## 开箱即用
 1. 下载已经手动构建好的 WSL distribution [点击下载](https://cloud.189.cn/t/RvQ7zuERBfAj) `https://cloud.189.cn/t/RvQ7zuERBfAj` 5G+下载完成解压zip, 其中包含tar包(9G+)和readme.md
