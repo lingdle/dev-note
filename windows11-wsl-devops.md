@@ -31,7 +31,7 @@ OS 构建类型:      Multiprocessor Free
 3. 切换 Ubuntu 子系统镜像源未 aliyun 镜像源，更新修复 Ubuntu 子系统
 4. 安装 浏览器 Chrome [参考这里](https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps#install-google-chrome-for-linux) 打开浏览器 `$> google-chrome`
 5. 安装 devops 偏好工具
-6. 安装 jetbrains toolbox-app 全家桶 [参考这里](https://www.jetbrains.com/zh-cn/toolbox-app/)
+6. 安装 jetbrains toolbox app 全家桶破解 [参考这里](https://www.jetbrains.com/zh-cn/toolbox-app/)
 
 
 ## 开箱即用
