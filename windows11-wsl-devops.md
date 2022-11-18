@@ -35,7 +35,7 @@ OS 构建类型:      Multiprocessor Free
 7. 安装 jetbrains toolbox app 全家桶破解 [参考这里](https://www.jetbrains.com/zh-cn/toolbox-app/)
 
 
-##启用fcitx-googlepinyin
+## 启用fcitx-googlepinyin
 ```
 sudo apt install dbus-x11 im-config fonts-noto fcitx fcitx-googlepinyin -y
 
