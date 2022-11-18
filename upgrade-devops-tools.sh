@@ -77,3 +77,30 @@ sudo apt update -y
 sudo apt install sublime-text -y
 fi
 
+JETBRAINS_TOOLBOX_HOME=/opt/jetbrains/jetbrains-toolbox/
+if [ ! -f "$JETBRAINS_TOOLBOX_HOME/jetbrains-toolbox" ]; then
+mkdir -p /opt/jetbrains/jetbrains-toolbox/
+mkdir -p /opt/jetbrains/apps/
+mkdir -p /opt/jetbrains/scripts/
+
+sudo apt install libfuse2 -y
+
+curl https://data.services.jetbrains.com/products/releases?code=TBA&latest=true&type=release | jq '.TBA[0].downloads.linux.link' | xargs -n1 wget -P /opt/jetbrains/
+
+ls /opt/jetbrains/jetbrains-toolbox*.tar.gz | xargs -i tar -zxvf {} -C $JETBRAINS_TOOLBOX_HOME --strip-components 1
+
+
+
+fi
+
+
+
+
+
+
+
+
+
+
+
+
