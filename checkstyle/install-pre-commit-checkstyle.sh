@@ -49,6 +49,7 @@ function checkPreCommitShell() {
     echo "    pre-commit shell not find: $preCommitSourceShellFile"
     echo "    download pre-commit shell..."
     wget "$preCommitSourceShellRepo" -O "$preCommitSourceShellFile"
+    chmod u+x "$preCommitSourceShellFile"
     echo "    pre-commit shell readied:$preCommitSourceShellFile"
   else
     echo "    pre-commit shell already exist: $preCommitSourceShellFile"
