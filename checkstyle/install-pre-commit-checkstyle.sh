@@ -4,6 +4,9 @@ readonly CURR_DIR=$(
   pwd
 )
 
+readonly gitIgnoreFile="$CURR_DIR/../.gitignore"
+readonly gitIgnoreItems="/checkstyle/* !/checkstyle/install-pre-commit-checkstyle.sh"
+
 readonly checkstyleJarRepo='https://github.com/checkstyle/checkstyle/releases/download/checkstyle-9.3/checkstyle-9.3-all.jar'
 readonly checkstyleJarName='checkstyle-9.3-all.jar'
 readonly checkstyleJarFile="$CURR_DIR/$checkstyleJarName"
@@ -18,6 +21,25 @@ readonly preCommitSourceShellName="pre-commit.sh"
 readonly preCommitSourceShellFile="$CURR_DIR/$preCommitSourceShellName"
 
 readonly preCommitGitShellFile="$CURR_DIR/../.git/hooks/pre-commit"
+
+function RegxEscape() {
+  printf -v var "%q" "$1"
+  echo "$var"
+  return
+}
+
+function checkGitIgnore() {
+  echo "Check .gitignore ..."
+  touch "$gitIgnoreFile"
+  for item in $gitIgnoreItems; do
+    if [ "$(grep -c "^$(RegxEscape "$item")$" "$gitIgnoreFile")" -ne '0' ]; then
+      echo "    already ignore item: $item"
+    else
+      echo "    add ignore item: $item"
+      echo "$item" >>"$gitIgnoreFile"
+    fi
+  done
+}
 
 function checkCheckstyleJar() {
   echo "Check checkstyle jar ..."
@@ -71,7 +93,6 @@ function linkGitPreCommit() {
   fi
 }
 
-
 function testPreCheckstyle() {
   echo "Test checkstyle at pre-commit ..."
   echo "    git commit -m 'test checkstyle' -a "
@@ -79,6 +100,7 @@ function testPreCheckstyle() {
 
 echo "=============================="
 echo "Install checkstyle for pre-commit..."
+checkGitIgnore
 checkCheckstyleJar
 checkCheckstyleConfig
 checkPreCommitShell
