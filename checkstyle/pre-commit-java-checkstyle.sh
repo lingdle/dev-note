@@ -24,8 +24,7 @@ function checkCheckstyleJar() {
 }
 
 function preCommitCheckstyle() {
-  echo "Find uncheck files..."
-  echo "    check file set:"
+  echo "Find uncheck file set..."
   echo "    --------------------------"
   files=()
   #for file in $(git status --porcelain | awk '{print $2}' | grep -Ev '.jar$|.sh$'); do
