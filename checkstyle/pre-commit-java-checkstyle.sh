@@ -45,6 +45,10 @@ function preCommitCheckstyle() {
     java -Duser.language=zh -jar "$checkstyleJarFile" -c "$checkstyleConfigFile" "${files[@]}"
     RET_CODE=$?
     echo "Errors $RET_CODE"
+    if [ "$RET_CODE" -ne '0' ]; then
+      echo "    need fix checkstyle"
+      exit 1
+    fi
     else
       echo "uncheck files is empty."
   fi
