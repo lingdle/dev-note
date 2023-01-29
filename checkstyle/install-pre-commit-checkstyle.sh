@@ -5,18 +5,21 @@ readonly CURR_DIR=$(
 )
 
 readonly gitIgnoreFile="$CURR_DIR/../.gitignore"
-readonly gitIgnoreItems="/checkstyle/* !/checkstyle/install-pre-commit-checkstyle.sh"
+readonly gitIgnoreItems="/checkstyle/* !/checkstyle/install-pre-commit-checkstyle.sh !/checkstyle/google-checkstyle.xml"
 
-readonly checkstyleJarRepo='https://github.com/checkstyle/checkstyle/releases/download/checkstyle-9.3/checkstyle-9.3-all.jar'
+#readonly checkstyleJarRepo='https://github.com/checkstyle/checkstyle/releases/download/checkstyle-9.3/checkstyle-9.3-all.jar'
+readonly checkstyleJarRepo='https://gitee.com/lingdle/dev-note/raw/master/checkstyle/checkstyle-9.3/checkstyle-9.3-all.jar'
 readonly checkstyleJarName='checkstyle-9.3-all.jar'
 readonly checkstyleJarFile="$CURR_DIR/$checkstyleJarName"
 
 #readonly checkstyleConfigRepo='https://raw.githubusercontent.com/checkstyle/checkstyle/master/src/main/resources/google_checks.xml'
-readonly checkstyleConfigRepo='https://raw.githubusercontent.com/lingdle/dev-note/master/checkstyle/google-checkstyle-fix.xml'
+#readonly checkstyleConfigRepo='https://raw.githubusercontent.com/lingdle/dev-note/master/checkstyle/google-checkstyle-fix.xml'
+readonly checkstyleConfigRepo='https://gitee.com/lingdle/dev-note/raw/master/checkstyle/google-checkstyle-fix.xml'
 readonly checkstyleConfigName='google-checkstyle.xml'
 readonly checkstyleConfigFile="$CURR_DIR/$checkstyleConfigName"
 
-readonly preCommitSourceShellRepo="https://raw.githubusercontent.com/lingdle/dev-note/master/checkstyle/pre-commit-java-checkstyle.sh"
+#readonly preCommitSourceShellRepo="https://raw.githubusercontent.com/lingdle/dev-note/master/checkstyle/pre-commit-java-checkstyle.sh"
+readonly preCommitSourceShellRepo="https://gitee.com/lingdle/dev-note/raw/master/checkstyle/pre-commit-java-checkstyle.sh"
 readonly preCommitSourceShellName="pre-commit.sh"
 readonly preCommitSourceShellFile="$CURR_DIR/$preCommitSourceShellName"
 
@@ -46,7 +49,7 @@ function checkCheckstyleJar() {
   if [ ! -f "$checkstyleJarFile" ]; then
     echo "    checkstyle jar not find: $checkstyleJarFile"
     echo "    download checkstyle jar..."
-    wget "$checkstyleJarRepo" -O "$checkstyleJarFile"
+    curl --create-dirs -L -o "$checkstyleJarFile" "$checkstyleJarRepo"
     echo "    checkstyle jar readied:$checkstyleJarFile"
   else
     echo "    checkstyle jar already exist:$checkstyleJarFile"
@@ -58,7 +61,7 @@ function checkCheckstyleConfig() {
   if [ ! -f "$checkstyleConfigFile" ]; then
     echo "    checkstyle config not find: $checkstyleConfigFile"
     echo "    download checkstyle config..."
-    wget "$checkstyleConfigRepo" -O "$checkstyleConfigFile"
+    curl --create-dirs -o "$checkstyleConfigFile" "$checkstyleConfigRepo"
     echo "    checkstyle config readied:$checkstyleConfigFile"
   else
     echo "    checkstyle config already exist:$checkstyleJarFile"
@@ -70,7 +73,7 @@ function checkPreCommitShell() {
   if [ ! -f "$preCommitSourceShellFile" ]; then
     echo "    pre-commit shell not find: $preCommitSourceShellFile"
     echo "    download pre-commit shell..."
-    wget "$preCommitSourceShellRepo" -O "$preCommitSourceShellFile"
+    curl --create-dirs -o "$preCommitSourceShellFile" "$preCommitSourceShellRepo"
     chmod u+x "$preCommitSourceShellFile"
     echo "    pre-commit shell readied:$preCommitSourceShellFile"
   else
@@ -82,8 +85,8 @@ function linkGitPreCommit() {
   echo "Link git pre-commit ..."
   if [ ! -f "$preCommitGitShellFile" ]; then
     echo "    pre-commit shell not find: $preCommitGitShellFile"
-    echo "    link $preCommitSourceShellFile to $preCommitGitShellFile"
-    ln -s "$preCommitSourceShellFile" "$preCommitGitShellFile"
+    echo "    copy $preCommitSourceShellFile to $preCommitGitShellFile"
+    cp -a "$preCommitSourceShellFile" "$preCommitGitShellFile"
     ls -l "$preCommitGitShellFile"
   else
     echo "    pre-commit shell already exist: $preCommitGitShellFile"
