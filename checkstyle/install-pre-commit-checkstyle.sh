@@ -7,8 +7,7 @@ readonly CURR_DIR=$(
 readonly gitIgnoreFile="$CURR_DIR/../.gitignore"
 readonly gitIgnoreItems="/checkstyle/* !/checkstyle/install-pre-commit-checkstyle.sh !/checkstyle/google-checkstyle.xml"
 
-#readonly checkstyleJarRepo='https://github.com/checkstyle/checkstyle/releases/download/checkstyle-9.3/checkstyle-9.3-all.jar'
-readonly checkstyleJarRepo='https://gitee.com/lingdle/dev-note/raw/master/checkstyle/checkstyle-9.3/checkstyle-9.3-all.jar'
+readonly checkstyleJarRepo='https://github.com/checkstyle/checkstyle/releases/download/checkstyle-9.3/checkstyle-9.3-all.jar'
 readonly checkstyleJarName='checkstyle-9.3-all.jar'
 readonly checkstyleJarFile="$CURR_DIR/$checkstyleJarName"
 
@@ -48,6 +47,8 @@ function checkCheckstyleJar() {
   echo "Check checkstyle jar ..."
   if [ ! -f "$checkstyleJarFile" ]; then
     echo "    checkstyle jar not find: $checkstyleJarFile"
+    echo "    maybe need command:"
+    echo "        curl --create-dirs -L -o $checkstyleJarFile $checkstyleJarRepo"
     echo "    download checkstyle jar..."
     curl --create-dirs -L -o "$checkstyleJarFile" "$checkstyleJarRepo"
     echo "    checkstyle jar readied:$checkstyleJarFile"
