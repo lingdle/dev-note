@@ -49,7 +49,7 @@ function checkCheckstyleJar() {
     echo "    checkstyle jar not find: $checkstyleJarFile"
     echo "    maybe need command:"
     echo "        curl --create-dirs -L -o $checkstyleJarFile $checkstyleJarRepo"
-    echo "    download checkstyle jar..."
+    echo "    download checkstyle jar ..."
     curl --create-dirs -L -o "$checkstyleJarFile" "$checkstyleJarRepo"
     echo "    checkstyle jar readied:$checkstyleJarFile"
   else
@@ -61,7 +61,7 @@ function checkCheckstyleConfig() {
   echo "Check checkstyle config ..."
   if [ ! -f "$checkstyleConfigFile" ]; then
     echo "    checkstyle config not find: $checkstyleConfigFile"
-    echo "    download checkstyle config..."
+    echo "    download checkstyle config ..."
     curl --create-dirs -o "$checkstyleConfigFile" "$checkstyleConfigRepo"
     echo "    checkstyle config readied:$checkstyleConfigFile"
   else
@@ -73,7 +73,7 @@ function checkPreCommitShell() {
   echo "Check pre-commit shell ..."
   if [ ! -f "$preCommitSourceShellFile" ]; then
     echo "    pre-commit shell not find: $preCommitSourceShellFile"
-    echo "    download pre-commit shell..."
+    echo "    download pre-commit shell ..."
     curl --create-dirs -o "$preCommitSourceShellFile" "$preCommitSourceShellRepo"
     chmod u+x "$preCommitSourceShellFile"
     echo "    pre-commit shell readied:$preCommitSourceShellFile"
@@ -105,7 +105,7 @@ function testPreCheckstyle() {
 }
 
 echo "=============================="
-echo "Install checkstyle for pre-commit..."
+echo "Install checkstyle for pre-commit ..."
 checkGitIgnore
 checkCheckstyleJar
 checkCheckstyleConfig
