@@ -99,7 +99,9 @@ function linkGitPreCommit() {
 
 function testPreCheckstyle() {
   echo "Test checkstyle at pre-commit ..."
+  echo "-----------------------------"
   echo "    git commit -m 'fix: add checkstyle audit' -a "
+  echo "-----------------------------"
 }
 
 echo "=============================="
