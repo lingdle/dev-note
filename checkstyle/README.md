@@ -55,7 +55,7 @@ ${project-repo-home-dir} #当前项目位置
 ```
 
 #### 2. 修正【非必须】
-** 当 `.git/hooks/pre-commit` 存在时: **
+**当 `.git/hooks/pre-commit` 存在时:**
 - 需要自行移植 [pre-commit-java-checkstyle.sh](https://gitee.com/lingdle/dev-note/raw/master/checkstyle/pre-commit-java-checkstyle.sh) 脚本内容，追加到 `.git/hooks/pre-commit`
 
 #### 3. 检查
