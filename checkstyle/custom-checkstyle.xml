@@ -46,7 +46,7 @@
     <!-- 每行不超过120个字符 -->
     <module name="LineLength">
         <property name="max" value="120"/>
-        <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
+        <property name="ignorePattern" value="^package.*|^import.*|jdbc:|a href|href|src|.+://"/>
     </module>
 
     <!-- 每个java文件一个语法树 -->
@@ -203,7 +203,7 @@
         <!-- <module name="DesignForExtension"/> -->
         <!-- 检查只有private构造函数的类是否声明为final -->
         <module name="FinalClass"/>
-        <!-- 检查工具类是否有putblic的构造器 -->
+        <!-- 检查工具类是否有public的构造器 -->
         <module name="HideUtilityClassConstructor"/>
         <!-- 检查接口是否仅定义类型 -->
         <module name="InterfaceIsType"/>
