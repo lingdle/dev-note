@@ -5,16 +5,16 @@ readonly CURR_DIR=$(
 )
 
 readonly gitIgnoreFile="$CURR_DIR/../.gitignore"
-readonly gitIgnoreItems="/checkstyle/* !/checkstyle/install-pre-commit-checkstyle.sh !/checkstyle/google-checkstyle.xml"
+readonly gitIgnoreItems="/checkstyle/* !/checkstyle/*.sh !/checkstyle/*.xml"
 
 readonly checkstyleJarRepo='https://github.com/checkstyle/checkstyle/releases/download/checkstyle-9.3/checkstyle-9.3-all.jar'
 readonly checkstyleJarName='checkstyle-9.3-all.jar'
 readonly checkstyleJarFile="$CURR_DIR/$checkstyleJarName"
 
 #readonly checkstyleConfigRepo='https://raw.githubusercontent.com/checkstyle/checkstyle/master/src/main/resources/google_checks.xml'
-#readonly checkstyleConfigRepo='https://raw.githubusercontent.com/lingdle/dev-note/master/checkstyle/google-checkstyle-fix.xml'
-readonly checkstyleConfigRepo='https://gitee.com/lingdle/dev-note/raw/master/checkstyle/google-checkstyle-fix.xml'
-readonly checkstyleConfigName='google-checkstyle.xml'
+#readonly checkstyleConfigRepo='https://raw.githubusercontent.com/lingdle/dev-note/master/checkstyle/custom-checkstyle.xml'
+readonly checkstyleConfigRepo='https://gitee.com/lingdle/dev-note/raw/master/checkstyle/custom-checkstyle.xml'
+readonly checkstyleConfigName='checkstyle.xml'
 readonly checkstyleConfigFile="$CURR_DIR/$checkstyleConfigName"
 
 #readonly preCommitSourceShellRepo="https://raw.githubusercontent.com/lingdle/dev-note/master/checkstyle/pre-commit-java-checkstyle.sh"

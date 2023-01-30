@@ -9,7 +9,7 @@ readonly checkstyleHome="$CURR_DIR/../../checkstyle"
 readonly checkstyleJarName='checkstyle-9.3-all.jar'
 readonly checkstyleJarFile="$checkstyleHome/$checkstyleJarName"
 
-readonly checkstyleConfigName='google-checkstyle.xml'
+readonly checkstyleConfigName='checkstyle.xml'
 readonly checkstyleConfigFile="$checkstyleHome/$checkstyleConfigName"
 
 function checkCheckstyleJar() {
