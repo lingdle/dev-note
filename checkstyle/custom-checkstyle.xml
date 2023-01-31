@@ -46,7 +46,7 @@
     <!-- 每行不超过120个字符 -->
     <module name="LineLength">
         <property name="max" value="120"/>
-        <property name="ignorePattern" value="^package.*|^import.*|jdbc:|a href|href|src|.+://"/>
+        <property name="ignorePattern" value="^package.*|^import.*|^#.*|jdbc:|a href|href|src|.+://"/>
     </module>
 
     <!-- 每个java文件一个语法树 -->
