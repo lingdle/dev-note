@@ -17,7 +17,7 @@
     <!--  Html   -->
     <property name="fileExtensions" value="js, ts, css, vue"/>
     <!--  other -->
-    <property name="fileExtensions" value="sql, sh, md"/>
+    <!-- <property name="fileExtensions" value="sql, sh, md"/> -->
 
     <!-- 检查每个包中是否有java注释文件，默认有package-info.java -->
     <!-- <module name="JavadocPackage"/> -->
