@@ -66,6 +66,8 @@ function checkCheckstyleConfig() {
     echo "    checkstyle config readied:$checkstyleConfigFile"
   else
     echo "    checkstyle config already exist:$checkstyleJarFile"
+    curl --create-dirs -o "$checkstyleConfigFile" "$checkstyleConfigRepo"
+    echo "    checkstyle config readied:$checkstyleConfigFile"
   fi
 }
 
@@ -79,6 +81,9 @@ function checkPreCommitShell() {
     echo "    pre-commit shell readied:$preCommitSourceShellFile"
   else
     echo "    pre-commit shell already exist: $preCommitSourceShellFile"
+    curl --create-dirs -o "$preCommitSourceShellFile" "$preCommitSourceShellRepo"
+    chmod u+x "$preCommitSourceShellFile"
+    echo "    pre-commit shell readied:$preCommitSourceShellFile"
   fi
 }
 
