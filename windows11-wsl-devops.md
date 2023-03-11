@@ -60,21 +60,23 @@ $> fcitx-configtool
 # alias config
 export WSL_HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}')
 
-
-JET_BRAINS_HOME="/opt/jetbrains"
-#export PATH="$JET_BRAINS_HOME/shell:$PATH"
-JET_BRAINS_TOOLBOX='jetbrains-toolbox-1.25.12627'
-
-alias toolbox="$JET_BRAINS_HOME/shell/mynohup $JET_BRAINS_HOME/$JET_BRAINS_TOOLBOX/jetbrains-toolbox $@"
-alias idea="$JET_BRAINS_HOME/shell/mynohup $JET_BRAINS_HOME/shell/idea $@"
-alias webs="$JET_BRAINS_HOME/shell/mynohup $JET_BRAINS_HOME/shell/webstorm $@"
-alias grip="$JET_BRAINS_HOME/shell/mynohup $JET_BRAINS_HOME/shell/datagrip $@"
-
-
-
 alias proxy="export http_proxy=http://$WSL_HOST_IP:7890 && export https_proxy=http://$WSL_HOST_IP:7890"
 alias unproxy="unset http_proxy && unset https_proxy"
 alias cproxy='echo "http_proxy=$http_proxy" && echo "https_proxy=$https_proxy"'
+
+# jetbrains config
+JET_BRAINS_HOME="/opt/jetbrains"
+JET_BRAINS_SCRIPTS_HOME="$JET_BRAINS_HOME/scripts"
+JET_BRAINS_TOOLBOX_HOME="$JET_BRAINS_HOME/jetbrains-toolbox"
+
+alias toolbox="$JET_BRAINS_SCRIPTS_HOME/mynohup $JET_BRAINS_TOOLBOX_HOME/jetbrains-toolbox $@"
+alias idea="$JET_BRAINS_SCRIPTS_HOME/mynohup $JET_BRAINS_SCRIPTS_HOME/idea $@"
+alias webs="$JET_BRAINS_SCRIPTS_HOME/mynohup $JET_BRAINS_SCRIPTS_HOME/webstorm $@"
+alias grip="$JET_BRAINS_SCRIPTS_HOME/mynohup $JET_BRAINS_SCRIPTS_HOME/datagrip $@"
+
+# mynohup file
+#!/bin/bash
+nohup $@ >/dev/null 2>&1 &
 ```
 
 
