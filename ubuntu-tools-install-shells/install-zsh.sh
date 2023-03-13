@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # 检查并安装 zsh
 if [ ! -x "$(command -v zsh)" ]; then
 sudo apt install zsh -y
@@ -16,4 +15,3 @@ sed -i 's/plugins=(git)/plugins=( git zsh-autosuggestions zsh-syntax-highlightin
 chsh -s $(which zsh)
 fi
 # 参考执行命令： curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/ubuntu-tools-install-shells/install-zsh.sh | bash
-
