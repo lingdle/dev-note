@@ -102,6 +102,7 @@ systemd = true
 `安装配置 zsh`
 ```
 curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/ubuntu-tools-install-shells/install-zsh.sh | bash
+chsh -s $(which zsh)
 ```
 
 
