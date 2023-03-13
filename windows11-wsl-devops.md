@@ -36,6 +36,14 @@ sudo apt install --fix-broken -y
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 google-chrome
 ```
+
+## 安装 zsh 
+```
+curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/ubuntu-tools-install-shells/install-zsh.sh | bash
+chsh -s $(which zsh)
+# Ctrl+D 退出终端重新登录
+```
+
 6. 安装 jetbrains toolbox app [全家桶下载](https://www.jetbrains.com/zh-cn/toolbox-app/) [破解](https://jetbra.in/s) `https://jetbra.in/s`
 ```
 curl -fsSL https://raw.githubusercontent.com/nagygergo/jetbrains-toolbox-install/master/jetbrains-toolbox.sh | bash
@@ -61,32 +69,15 @@ $> fcitx-configtool
 ## 解决快捷键冲突：无法触发输入法时，请重新设置一遍快捷键- trigger input method； 推荐将其他快捷键全部 按 ESC 取消
 ## 设置输入法皮肤： 高级选项中设置 skin name为 dark
 ```
+
+
+
 ## 偏好设置 
 `vim ~/.devops-preset.sh` `sudo ln -sf ~/.devops-preset.sh /etc/profile.d/devops-preset.sh`
 ```
-# set fcitx
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS="@im=fcitx"
-
-[ $(ps -C fcitx --no-header | wc -l) -eq 0 ] && [ -x /usr/bin/fcitx ] && (nohup fcitx >/dev/null 2>&1 &)
-
-# Added by Toolbox App
-export PATH="$PATH:/home/devops/.local/share/JetBrains/Toolbox/scripts"
-
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
-
-# jetbrains alias
-alias toolbox="mynohup jetbrains-toolbox $@"
-alias idea="mynohup idea $@"
-alias webs="mynohup webstorm $@"
-alias grip="mynohup datagrip $@"
-
-# wsl alias
-export WSL_HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}')
-alias proxy="export http_proxy=http://$WSL_HOST_IP:7890 && export https_proxy=http://$WSL_HOST_IP:7890"
-alias unproxy="unset http_proxy && unset https_proxy"
-alias cproxy='echo "http_proxy=$http_proxy" && echo "https_proxy=$https_proxy"'
+curl --create-dirs -o  ~/.devops-preset.sh https://raw.githubusercontent.com/lingdle/dev-note/master/ubuntu-tools-install-shells/devops-preset.sh
+sed -i '/source ~\/\.devops-preset.sh/d' ~/.zhsrc >/dev/null 2>&1
+echo 'source ~/.devops-preset.sh' >> ~/.zhsrc
 ```
 `vim /home/devops/.local/share/JetBrains/Toolbox/scripts/mynohup`  
 `chomod +x /home/devops/.local/share/JetBrains/Toolbox/scripts/mynohup`
@@ -114,10 +105,6 @@ default = devops
 [boot]
 systemd = true
 ```
-`安装配置 zsh`
-```
-curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/ubuntu-tools-install-shells/install-zsh.sh | bash
-chsh -s $(which zsh)
-```
+
 
 
