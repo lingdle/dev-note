@@ -62,16 +62,31 @@ $> fcitx-configtool
 ## 设置输入法皮肤： 高级选项中设置 skin name为 dark
 ```
 ## 偏好设置 
-`vim ~/.profile`  `source ~/.profile`
+`vim ~/.devops-preset.sh` `sudo ln -sf ~/.devops-preset.sh /etc/profile.d/devops-preset.sh`
 ```
-# jetbrains config
+# set fcitx
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+
+[ $(ps -C fcitx --no-header | wc -l) -eq 0 ] && [ -x /usr/bin/fcitx ] && (nohup fcitx >/dev/null 2>&1 &)
+
 # Added by Toolbox App
 export PATH="$PATH:/home/devops/.local/share/JetBrains/Toolbox/scripts"
 
+___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
+# jetbrains alias
 alias toolbox="mynohup jetbrains-toolbox $@"
 alias idea="mynohup idea $@"
 alias webs="mynohup webstorm $@"
 alias grip="mynohup datagrip $@"
+
+# wsl alias
+export WSL_HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}')
+alias proxy="export http_proxy=http://$WSL_HOST_IP:7890 && export https_proxy=http://$WSL_HOST_IP:7890"
+alias unproxy="unset http_proxy && unset https_proxy"
+alias cproxy='echo "http_proxy=$http_proxy" && echo "https_proxy=$https_proxy"'
 ```
 `vim /home/devops/.local/share/JetBrains/Toolbox/scripts/mynohup`  
 `chomod +x /home/devops/.local/share/JetBrains/Toolbox/scripts/mynohup`
