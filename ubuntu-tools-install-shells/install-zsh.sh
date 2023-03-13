@@ -17,7 +17,7 @@ fi
 ## 启用 devops 预设
 [ ! -s ~/.devops-preset.sh ] && (curl --create-dirs -o  ~/.devops-preset.sh https://raw.githubusercontent.com/lingdle/dev-note/master/ubuntu-tools-install-shells/devops-preset.sh)
 
-[ -z "$(cat ~/.zshrc | grep '# config devops preset')" ] && (sed -i '/source .*/a\# config devops preset\nsource ~/.devops-preset1.sh' ~/.zshrc)
+[ -z "$(cat ~/.zshrc | grep '# config devops preset')" ] && (sed -i '/source .*/a\# config devops preset\nsource ~/.devops-preset.sh' ~/.zshrc)
 
 ## 切换用户默认 shell 为 zsh
 [ "$SHELL" != "$(which zsh)" ] && (chsh -s $(which zsh))
