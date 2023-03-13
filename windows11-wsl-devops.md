@@ -55,7 +55,8 @@ $> fcitx-configtool
 ## 解决快捷键冲突，推荐清空快捷键设置
 ## 切换到 dark 皮肤
 ```
-## 偏好设置 `vim ~/.zshrc`  `source ~/.zshrc`
+## 偏好设置 
+`vim ~/.zshrc`  `source ~/.zshrc`
 ```
 # jetbrains config
 # Added by Toolbox App
