@@ -57,27 +57,25 @@ IMFCITX_RUNNING=$(ps -C fcitx --no-header | wc -l)
 # 打开配置输入法
 $> fcitx-configtool
 #推荐配置
-## 只保留 fcitx-googlepinyin 输入法
-## 解决快捷键冲突，推荐清空快捷键设置
-## 切换到 dark 皮肤
+## 添加 fcitx-googlepinyin 输入法： 找不到时，取消勾选-仅显示当前语言相关
+## 解决快捷键冲突：无法触发输入法时，请重新设置一遍快捷键- trigger input method； 推荐将其他快捷键全部 按 ESC 取消
+## 设置输入法皮肤： 高级选项中设置 skin name为 dark
 ```
 ## 偏好设置 
 `vim ~/.profile`  `source ~/.profile`
 ```
 # jetbrains config
 # Added by Toolbox App
-# export PATH="$PATH:/home/devops/.local/share/JetBrains/Toolbox/scripts"
-export PATH="$PATH:/opt/jetbrains/scripts"
-JET_BRAINS_HOME="/opt/jetbrains"
-JET_BRAINS_SCRIPTS_HOME="$JET_BRAINS_HOME/scripts"
-JET_BRAINS_TOOLBOX_HOME="$HOME/.local/share/JetBrains/Toolbox/bin/"
+export PATH="$PATH:/home/devops/.local/share/JetBrains/Toolbox/scripts"
 
-alias toolbox="$JET_BRAINS_SCRIPTS_HOME/mynohup $JET_BRAINS_TOOLBOX_HOME/jetbrains-toolbox $@"
-alias idea="$JET_BRAINS_SCRIPTS_HOME/mynohup idea $@"
-alias webs="$JET_BRAINS_SCRIPTS_HOME/mynohup webstorm $@"
-alias grip="$JET_BRAINS_SCRIPTS_HOME/mynohup datagrip $@"
-
-# mynohup file
+alias toolbox="mynohup jetbrains-toolbox $@"
+alias idea="mynohup idea $@"
+alias webs="mynohup webstorm $@"
+alias grip="mynohup datagrip $@"
+```
+`vim /home/devops/.local/share/JetBrains/Toolbox/scripts/mynohup`  
+`chomod +x /home/devops/.local/share/JetBrains/Toolbox/scripts/mynohup`
+```
 #!/bin/bash
 nohup $@ >/dev/null 2>&1 &
 ```
