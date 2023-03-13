@@ -11,7 +11,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ## 启用插件
 sed -i 's/plugins=(git)/plugins=( git zsh-autosuggestions zsh-syntax-highlighting )/g' ~/.zshrc
-## 切换系统默认 shell 为 zsh
-sudo chsh -s $(which zsh)
+## 切换用户默认 shell 为 zsh
+chsh -s $(which zsh)
 fi
 # 参考执行命令： curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/ubuntu-tools-install-shells/install-zsh.sh | bash
