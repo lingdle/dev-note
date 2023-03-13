@@ -20,7 +20,6 @@ fi
 [ -z "$(cat ~/.zshrc | grep '# config devops preset')" ] && (sed -i '/source .*/a\# config devops preset\nsource ~/.devops-preset1.sh' ~/.zshrc)
 
 ## 切换用户默认 shell 为 zsh
-chsh -s $(which zsh)
+[ "$SHELL" != "$(which zsh)" ] && (chsh -s $(which zsh))
 wait
-[ "$SHELL" = "$(which zsh)" ] && (chsh -s $(which zsh))
 # 参考执行命令： curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/ubuntu-tools-install-shells/install-zsh.sh | bash
