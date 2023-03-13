@@ -30,8 +30,11 @@ OS 构建类型:      Multiprocessor Free
 4. 安装 输入法 fcitx-googlepinyin [参考这里](#启用fcitx-googlepinyin)
 5. 安装 浏览器 Chrome [参考这里](https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps#install-google-chrome-for-linux) 打开浏览器 `$> google-chrome`
 6. 安装 devops 偏好工具
-7. 安装 jetbrains toolbox app [全家桶下载](https://www.jetbrains.com/zh-cn/toolbox-app/) [破解](https://jetbra.in/s)
+7. 安装 jetbrains toolbox app [全家桶下载](https://www.jetbrains.com/zh-cn/toolbox-app/) [破解](https://jetbra.in/s) `https://jetbra.in/s`
 
+```
+curl -fsSL https://raw.githubusercontent.com/nagygergo/jetbrains-toolbox-install/master/jetbrains-toolbox.sh | bash
+```
 
 ## 启用fcitx-googlepinyin
 ```
