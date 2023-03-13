@@ -44,41 +44,38 @@ chsh -s $(which zsh)
 # Ctrl+D 退出终端重新登录
 ```
 
-6. 安装 jetbrains toolbox app [全家桶下载](https://www.jetbrains.com/zh-cn/toolbox-app/) [破解](https://jetbra.in/s) `https://jetbra.in/s`
-```
-curl -fsSL https://raw.githubusercontent.com/nagygergo/jetbrains-toolbox-install/master/jetbrains-toolbox.sh | bash
-```
-
 ## 安装输入法：启用fcitx-googlepinyin
 ```
+# 安装输入法依赖
 sudo apt install dbus-x11 im-config fonts-noto fcitx fcitx-googlepinyin -y
 
-# vim ~/.profile 追加以下配置
-# set fcitx
+# 配置输入法：打开配置工具
+fcitx-configtool
+
+## 推荐配置
+#### 添加 fcitx-googlepinyin 输入法： 找不到时，取消勾选-仅显示当前语言相关
+#### 解决快捷键冲突：无法触发输入法时，请重新设置一遍快捷键- trigger input method； 推荐将其他快捷键全部 按 ESC 取消
+#### 设置输入法皮肤： 高级选项中设置 skin name为 dark
+
+# 需要以下环境变量：可能在 ~/.devops-preset.sh 里找到
+# config fcitx
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
+# run fcitx
+[ $(ps -C fcitx --no-header | wc -l) -eq 0 ] && [ -x /usr/bin/fcitx ] && (nohup fcitx >/dev/null 2>&1 &)
 
-IMFCITX_RUNNING=$(ps -C fcitx --no-header | wc -l)
-[ $IMFCITX_RUNNING -eq 0 ] && [ -x /usr/bin/fcitx ] && nohup fcitx >/dev/null 2>&1 &
-
-# 打开配置输入法
-$> fcitx-configtool
-#推荐配置
-## 添加 fcitx-googlepinyin 输入法： 找不到时，取消勾选-仅显示当前语言相关
-## 解决快捷键冲突：无法触发输入法时，请重新设置一遍快捷键- trigger input method； 推荐将其他快捷键全部 按 ESC 取消
-## 设置输入法皮肤： 高级选项中设置 skin name为 dark
 ```
 
 
 
 ## 偏好设置 
-`vim ~/.devops-preset.sh` `sudo ln -sf ~/.devops-preset.sh /etc/profile.d/devops-preset.sh`
+
+安装 jetbrains toolbox app [全家桶下载](https://www.jetbrains.com/zh-cn/toolbox-app/) [破解](https://jetbra.in/s) `https://jetbra.in/s`
 ```
-curl --create-dirs -o  ~/.devops-preset.sh https://raw.githubusercontent.com/lingdle/dev-note/master/ubuntu-tools-install-shells/devops-preset.sh
-sed -i '/source ~\/\.devops-preset.sh/d' ~/.zhsrc >/dev/null 2>&1
-echo 'source ~/.devops-preset.sh' >> ~/.zhsrc
+curl -fsSL https://raw.githubusercontent.com/nagygergo/jetbrains-toolbox-install/master/jetbrains-toolbox.sh | bash
 ```
+
 `vim /home/devops/.local/share/JetBrains/Toolbox/scripts/mynohup`  
 `chomod +x /home/devops/.local/share/JetBrains/Toolbox/scripts/mynohup`
 ```
