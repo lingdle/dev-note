@@ -1,9 +1,9 @@
 #!/bin/sh
-# set fcitx
+# config fcitx
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
-
+# run fcitx
 [ $(ps -C fcitx --no-header | wc -l) -eq 0 ] && [ -x /usr/bin/fcitx ] && (nohup fcitx >/dev/null 2>&1 &)
 
 # Added by Toolbox App
