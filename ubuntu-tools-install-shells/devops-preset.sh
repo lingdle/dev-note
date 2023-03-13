@@ -9,7 +9,7 @@ export XMODIFIERS="@im=fcitx"
 # Added by Toolbox App
 export PATH="$PATH:/home/devops/.local/share/JetBrains/Toolbox/scripts"
 
-[ -f "${HOME}/.jetbrains.vmoptions.sh" ] && (. ${HOME}/.jetbrains.vmoptions.sh)
+___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
 
 # jetbrains alias
 alias toolbox="mynohup jetbrains-toolbox $@"
