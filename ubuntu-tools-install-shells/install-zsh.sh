@@ -21,5 +21,4 @@ fi
 
 ## 切换用户默认 shell 为 zsh
 [ "$SHELL" != "$(which zsh)" ] && (chsh -s $(which zsh))
-chsh -s $(which zsh)
 # 参考执行命令： curl -fsSL https://raw.githubusercontent.com/lingdle/dev-note/master/ubuntu-tools-install-shells/install-zsh.sh | bash
