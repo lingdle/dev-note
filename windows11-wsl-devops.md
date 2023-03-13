@@ -55,7 +55,7 @@ $> fcitx-configtool
 ## 解决快捷键冲突，推荐清空快捷键设置
 ## 切换到 dark 皮肤
 ```
-## 偏好设置
+## 偏好设置 `vim ~/.zshrc`  `source ~/.zshrc`
 ```
 # jetbrains config
 # Added by Toolbox App
@@ -74,5 +74,26 @@ alias grip="$JET_BRAINS_SCRIPTS_HOME/mynohup datagrip $@"
 #!/bin/bash
 nohup $@ >/dev/null 2>&1 &
 ```
+
+`vim /etc/wsl.conf`
+```
+# Network host settings that enable the DNS server used by WSL 2. This example changes the hostname, sets generateHosts to false, preventing WSL from the default behavior of auto-generating /etc/hosts, and sets generateResolvConf to false, preventing WSL from auto-generating /etc/resolv.conf, so that you can create your own (ie. nameserver 1.1.1.1).
+[network]
+hostname = wsl-Ubuntu-22.04
+
+# Set whether WSL supports interop process like launching Windows apps and adding path variables. Setting these to false will block the launch of Windows processes and block adding $PATH environment variables.
+[interop]
+enabled = false
+appendWindowsPath = false
+
+# Set the user when launching a distribution with WSL.
+[user]
+default = devops
+
+# Set a command to run when a new WSL instance launches.
+[boot]
+systemd=true
+```
+
 
 
