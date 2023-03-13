@@ -93,7 +93,7 @@ default = devops
 
 # Set a command to run when a new WSL instance launches.
 [boot]
-systemd=true
+systemd = true
 ```
 
 
