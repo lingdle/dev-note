@@ -8,6 +8,7 @@ jabba install adopt-openj9@1.8.0-262
 jabba ls
 jabba use adopt-openj9@1.8.0-262
 jabba current
+jabba alias default adopt-openj9@1.8.0-262
 java -version
 fi
 
