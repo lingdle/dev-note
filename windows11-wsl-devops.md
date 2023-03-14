@@ -27,7 +27,7 @@ OS 构建类型:      Multiprocessor Free
 1. 准备让 Ubuntu 子系统可以使用 Windows 系统上的代理安装软件：重点1：在Windows 系统 **打开网络防火墙** ；重点2：**开启外网 vpn 端口: 7890 开启 Allow LAN** ; 
 2. 打开 Ubuntu 子系统命令窗口，初始化系统配置> 用户名： devops 密码：******
 3. 切换 Ubuntu 子系统镜像源未 aliyun 镜像源，更新修复 Ubuntu 子系统
-4. 安装 输入法 fcitx-googlepinyin [参考这里](#【推荐】安装输入法启用fcitx-googlepinyin)
+4. 安装 输入法 fcitx-googlepinyin [参考这里](#推荐安装输入法启用fcitx-googlepinyin)
 5. 安装 浏览器 Chrome [参考这里](https://learn.microsoft.com/zh-cn/windows/wsl/tutorials/gui-apps#install-google-chrome-for-linux) 打开浏览器 `$> google-chrome`
 ```
 sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
