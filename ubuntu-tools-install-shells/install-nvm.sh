@@ -1,6 +1,6 @@
 # 检查并安装 nvm
 if [ ! -x "$(command -v nvm)" ]; then
-curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
 #NVM_CONFIG='# NVM configuration
 #export NVM_DIR="$HOME/.nvm"
