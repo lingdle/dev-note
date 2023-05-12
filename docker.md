@@ -84,7 +84,12 @@ sudo systemctl disable docker
 cd /etc/docker/
 sudo tee /etc/docker/daemon.json <<-'EOF'
 {
-  "registry-mirrors": ["https://ab4e79hs.mirror.aliyuncs.com"]
+  "registry-mirrors": [
+    "https://hub-mirror.c.163.com",
+    "https://dockerhub.azk8s.cn",
+    "https://reg-mirror.qiniu.com",
+    "https://registry.docker-cn.com"
+  ]
 }
 EOF
 ```
