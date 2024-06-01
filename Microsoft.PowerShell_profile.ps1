@@ -33,6 +33,9 @@ myalias;
 function ohmyposh{
 	#Install-Module -Name Terminal-Icons
 	#Import-Module Terminal-Icons
+
+	#Install-Module posh-git
+	Import-Module posh-git
 	[Console]::OutputEncoding = [Text.Encoding]::UTF8
 	#oh-my-posh init pwsh | Invoke-Expression;
 	oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/simple.omp.json" | Invoke-Expression;
