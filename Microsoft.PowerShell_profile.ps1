@@ -20,18 +20,23 @@ function javaenv{
 	[Environment]::SetEnvironmentVariable('PATH', "%JAVA_HOME%\bin;$envPath", 'Machine');
 }
 
+function nvmenv{
+	nvm node_mirror https://npmmirror.com/mirrors/node/
+	nvm npm_mirror https://npmmirror.com/mirrors/npm/
+}
+nvmenv;
+
 
 function myalias{
-	Set-Alias grep Select-String -Scope Global;
+	#Set-Alias grep Select-String -Scope Global;
 	Set-Alias open explorer -Scope Global;
 	Set-Alias ll ls -Scope Global;
 	Set-Alias subl "E:\devtools\Sublime Text\subl.exe" -Scope Global;
 }
-
 myalias;
 
 function ohmyposh{
-	#Install-Module -Name Terminal-Icons
+	#Install-Module Terminal-Icons
 	#Import-Module Terminal-Icons
 
 	#Install-Module posh-git
@@ -40,5 +45,4 @@ function ohmyposh{
 	#oh-my-posh init pwsh | Invoke-Expression;
 	oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/simple.omp.json" | Invoke-Expression;
 }
-
 ohmyposh;
