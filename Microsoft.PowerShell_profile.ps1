@@ -22,6 +22,7 @@ function javaenv{
 
 
 function myalias{
+	Set-Alias grep Select-String -Scope Global;
 	Set-Alias open explorer -Scope Global;
 	Set-Alias ll ls -Scope Global;
 	Set-Alias subl "E:\devtools\Sublime Text\subl.exe" -Scope Global;
